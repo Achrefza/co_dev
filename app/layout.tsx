@@ -19,11 +19,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'CO_DEV | Web Development Studio',
-  description: 'Premium portfolio for CO_DEV showcasing modern, secure and scalable web projects.',
-  keywords: ['CO_DEV', 'web development', 'portfolio', 'next.js', 'freelance developer'],
+  description: 'CO_DEV is a professional web development studio building modern, high-performance and scalable websites.',
+  keywords: ['CO_DEV', 'web development studio', 'web agency', 'next.js', 'scalable websites'],
   openGraph: {
     title: 'CO_DEV | Web Development Studio',
-    description: 'Creative digital business card of CO_DEV web studio.',
+    description: 'Professional web development studio for modern, high-performance and scalable websites.',
     type: 'website'
   }
 };

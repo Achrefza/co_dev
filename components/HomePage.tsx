@@ -286,13 +286,12 @@ export function HomePage() {
             <div className="absolute -right-10 bottom-4 h-52 w-52 rounded-full bg-cyan-300/10 blur-3xl" />
             <div className="relative">
               <div className="mx-auto max-w-3xl text-center">
-                <p className="eyebrow text-sky-200">Performance &amp; SEO Excellence</p>
+                <p className="eyebrow text-sky-200">Professional Standards</p>
                 <h2 className="mt-5 font-heading text-3xl font-semibold tracking-[-0.045em] text-white md:text-5xl">
-                  Built for Performance, Visibility &amp; Growth
+                  Built for Performance, Visibility &amp; Scale
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl font-body text-base leading-8 text-slate-300/82 md:text-lg md:leading-9">
-                  We don’t just build websites — we engineer high-performance platforms optimized for search engines,
-                  speed, and scalability.
+                  We build high-performance websites and digital platforms engineered for visibility, speed and long-term scalability.
                 </p>
               </div>
 
@@ -327,18 +326,18 @@ export function HomePage() {
             <div className="absolute -right-10 bottom-6 h-52 w-52 rounded-full bg-cyan-300/12 blur-3xl" />
             <div className="relative">
               <div className="mx-auto max-w-3xl text-center">
-                <p className="eyebrow text-sky-200">Premium Development Services</p>
+                <p className="eyebrow text-sky-200">Services</p>
                 <h2 className="mt-5 font-heading text-3xl font-semibold tracking-[-0.045em] text-white md:text-5xl">
-                  Custom Web Development Services
+                  Professional Web Development Services
                 </h2>
                 <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300/82 md:text-lg md:leading-9">
-                  We build high-quality, fully custom websites tailored to your business needs — using modern technologies and clean, scalable code.
+                  We develop a wide range of digital solutions tailored to your needs.
                 </p>
               </div>
 
               <div className="mt-10 rounded-[30px] border border-sky-200/15 bg-sky-400/10 px-6 py-6 text-center shadow-[0_18px_60px_rgba(14,165,233,0.12)] md:mt-12">
                 <p className="font-body text-sm leading-7 text-sky-50/95 md:text-base md:leading-8">
-                  We focus on fully custom, code-driven development using modern frameworks to ensure performance, scalability, and long-term reliability.
+                  Our studio delivers custom websites and digital products with a focus on performance, scalability and long-term reliability.
                 </p>
               </div>
 
@@ -369,7 +368,7 @@ export function HomePage() {
         <motion.section id="projects" className="section-container section-reveal relative space-y-7" {...fadeUp}>
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
-              <p className="eyebrow">Portfolio</p>
+              <p className="eyebrow">Our Work</p>
               <h2 className="section-heading">{t.projectsTitle}</h2>
             </div>
             <p className="section-copy">{t.projectsSubtitle}</p>
@@ -425,7 +424,7 @@ export function HomePage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_42%)]" />
             <div className="relative flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl">
-                <p className="eyebrow">Contact</p>
+                <p className="eyebrow">Let’s work together</p>
                 <h2 className="mt-5 font-heading text-4xl font-semibold tracking-[-0.055em] text-white md:text-5xl lg:text-[3.5rem]">
                   {t.contactTitle}
                 </h2>
