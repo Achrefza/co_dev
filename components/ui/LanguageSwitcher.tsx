@@ -18,7 +18,7 @@ export function LanguageSwitcher({ locale, onChange }: LanguageSwitcherProps) {
           <button
             key={item}
             onClick={() => onChange(item)}
-            className={`relative overflow-hidden rounded-full px-3.5 py-2 text-[11px] font-semibold tracking-[0.24em] transition md:px-4 ${
+            className={`relative overflow-hidden rounded-full px-3.5 py-2 font-body text-[11px] font-semibold tracking-[0.24em] transition md:px-4 ${
               isActive ? 'text-slate-950' : 'text-slate-300 hover:text-white'
             }`}
             aria-pressed={isActive}

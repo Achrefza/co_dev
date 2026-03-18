@@ -27,21 +27,21 @@ export function ProjectCard({ project, visitLabel }: ProjectCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
           <div>
-            <p className="mb-2 text-xs uppercase tracking-[0.28em] text-accent/90">Featured build</p>
-            <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+            <p className="eyebrow mb-2 text-xs text-accent/90">Featured build</p>
+            <h3 className="font-heading text-2xl font-semibold tracking-[-0.04em] text-white">{project.title}</h3>
           </div>
-          <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-slate-100 backdrop-blur-md">
+          <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 font-body text-xs uppercase tracking-[0.18em] text-slate-100 backdrop-blur-md">
             Premium UI
           </span>
         </div>
       </div>
       <div className="relative space-y-5 p-6">
-        <p className="text-sm leading-6 text-slate-300 md:text-[15px]">{project.description}</p>
+        <p className="font-body text-sm leading-7 text-slate-300/85 md:text-[15px]">{project.description}</p>
         <div className="flex flex-wrap gap-2.5">
           {project.tech.map((item) => (
             <span
               key={item}
-              className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-medium text-sky-100"
+              className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 font-body text-xs font-medium tracking-[0.02em] text-sky-100"
             >
               {item}
             </span>
@@ -51,7 +51,7 @@ export function ProjectCard({ project, visitLabel }: ProjectCardProps) {
           href={project.url}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:gap-3 hover:text-accent"
+          className="inline-flex items-center gap-2 font-body text-sm font-semibold tracking-[0.01em] text-primary transition hover:gap-3 hover:text-accent"
         >
           {visitLabel}
           <span aria-hidden="true">↗</span>

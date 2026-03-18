@@ -146,10 +146,10 @@ export function HomePage() {
 
       <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/55 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-12">
-          <a href="#hero" className="text-lg font-semibold tracking-[0.35em] text-white transition hover:text-primary">
+          <a href="#hero" className="font-heading text-lg font-semibold tracking-[0.32em] text-white transition hover:text-primary">
             CO_DEV
           </a>
-          <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+          <nav className="hidden items-center gap-8 font-body text-sm text-slate-300/90 md:flex">
             <a href="#projects" className="transition hover:text-primary">
               {t.navProjects}
             </a>
@@ -176,7 +176,7 @@ export function HomePage() {
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-accent"
+                  className="eyebrow inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs text-accent"
                 >
                   {t.studio}
                 </motion.span>
@@ -184,7 +184,7 @@ export function HomePage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.08, duration: 0.6 }}
-                  className="mt-8 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl xl:text-[5.4rem]"
+                  className="hero-title mt-8 max-w-4xl font-heading text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl xl:text-[5.4rem]"
                 >
                   <span className="block text-white/95 drop-shadow-[0_0_24px_rgba(125,211,252,0.16)]">{t.heroTitleLead}</span>
                   <span className="gradient-text gradient-flow block pb-2 drop-shadow-[0_0_30px_rgba(56,189,248,0.24)]">
@@ -195,7 +195,7 @@ export function HomePage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.16, duration: 0.6 }}
-                  className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl"
+                  className="body-copy mt-8 max-w-2xl text-lg text-slate-300/85 md:text-xl md:leading-9"
                 >
                   {t.tagline}
                 </motion.p>
@@ -221,7 +221,7 @@ export function HomePage() {
                   className="mt-12 grid max-w-xl gap-4 sm:grid-cols-2"
                 >
                   {[t.heroMetricOne, t.heroMetricTwo].map((item) => (
-                    <div key={item} className="glass-card rounded-2xl px-5 py-4 text-sm text-slate-200">
+                    <div key={item} className="glass-card rounded-2xl px-5 py-4 font-body text-sm leading-7 text-slate-200/95">
                       <span className="mb-2 block h-2 w-16 rounded-full bg-gradient-to-r from-primary to-accent" />
                       {item}
                     </div>
@@ -240,8 +240,8 @@ export function HomePage() {
                   <div className="relative">
                     <div className="flex items-center justify-between border-b border-white/10 pb-4">
                       <div>
-                        <p className="text-xs uppercase tracking-[0.28em] text-accent">{t.heroCardLabel}</p>
-                        <h2 className="mt-2 text-2xl font-semibold text-white">{t.heroCardTitle}</h2>
+                        <p className="eyebrow text-xs text-accent">{t.heroCardLabel}</p>
+                        <h2 className="mt-2 font-heading text-2xl font-semibold tracking-[-0.04em] text-white">{t.heroCardTitle}</h2>
                       </div>
                       <div className="flex gap-2">
                         <span className="h-3 w-3 rounded-full bg-rose-400/70" />
@@ -250,19 +250,19 @@ export function HomePage() {
                       </div>
                     </div>
 
-                    <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">{t.heroCardText}</p>
+                    <p className="body-copy mt-6 max-w-md text-sm">{t.heroCardText}</p>
 
                     <div className="mt-8 grid gap-4 sm:grid-cols-2">
                       <div className="rounded-3xl border border-white/10 bg-slate-950/40 p-5">
-                        <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Delivery</p>
-                        <p className="mt-3 text-4xl font-semibold text-white">03</p>
-                        <p className="mt-3 text-sm text-slate-300">Discovery, design system, launch-ready frontend.</p>
+                        <p className="font-body text-xs uppercase tracking-[0.24em] text-slate-400">Delivery</p>
+                        <p className="mt-3 font-heading text-4xl font-semibold tracking-[-0.05em] text-white">03</p>
+                        <p className="mt-3 font-body text-sm leading-7 text-slate-300/85">Discovery, design system, launch-ready frontend.</p>
                       </div>
                       <div className="rounded-3xl border border-primary/20 bg-primary/10 p-5">
                         <p className="text-xs uppercase tracking-[0.24em] text-accent">Quality signal</p>
                         <div className="mt-4 space-y-3">
                           {['UI direction', 'Motion polish', 'Performance'].map((item) => (
-                            <div key={item} className="flex items-center justify-between text-sm text-slate-100">
+                            <div key={item} className="flex items-center justify-between font-body text-sm text-slate-100">
                               <span>{item}</span>
                               <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_16px_rgba(125,211,252,0.7)]" />
                             </div>
@@ -284,11 +284,11 @@ export function HomePage() {
             <div className="absolute -right-10 bottom-4 h-44 w-44 rounded-full bg-cyan-300/10 blur-3xl" />
             <div className="relative">
               <div className="mx-auto max-w-3xl text-center">
-                <p className="text-sm uppercase tracking-[0.32em] text-sky-200">Performance &amp; SEO Excellence</p>
-                <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                <p className="eyebrow text-sky-200">Performance &amp; SEO Excellence</p>
+                <h2 className="mt-5 font-heading text-3xl font-semibold tracking-[-0.045em] text-white md:text-5xl">
                   Built for Performance, Visibility &amp; Growth
                 </h2>
-                <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+                <p className="mx-auto mt-5 max-w-2xl font-body text-base leading-8 text-slate-300/85 md:text-lg">
                   We don’t just build websites — we engineer high-performance platforms optimized for search engines,
                   speed, and scalability.
                 </p>
@@ -309,8 +309,8 @@ export function HomePage() {
                     <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)]">
                       {card.icon}
                     </div>
-                    <h3 className="relative mt-6 text-xl font-semibold text-white">{card.title}</h3>
-                    <p className="relative mt-3 text-sm leading-7 text-slate-300">{card.description}</p>
+                    <h3 className="relative mt-6 font-heading text-xl font-semibold tracking-[-0.035em] text-white">{card.title}</h3>
+                    <p className="relative mt-3 font-body text-sm leading-7 text-slate-300/85">{card.description}</p>
                   </motion.article>
                 ))}
               </div>
@@ -325,8 +325,8 @@ export function HomePage() {
             <div className="absolute -right-10 bottom-6 h-52 w-52 rounded-full bg-cyan-300/12 blur-3xl" />
             <div className="relative">
               <div className="mx-auto max-w-3xl text-center">
-                <p className="text-sm uppercase tracking-[0.32em] text-sky-200">Premium Development Services</p>
-                <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                <p className="eyebrow text-sky-200">Premium Development Services</p>
+                <h2 className="mt-5 font-heading text-3xl font-semibold tracking-[-0.045em] text-white md:text-5xl">
                   Custom Web Development Services
                 </h2>
                 <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
@@ -335,7 +335,7 @@ export function HomePage() {
               </div>
 
               <div className="mt-8 rounded-[28px] border border-sky-200/15 bg-sky-400/10 px-6 py-5 text-center shadow-[0_18px_60px_rgba(14,165,233,0.12)] md:mt-10">
-                <p className="text-sm leading-7 text-sky-50 md:text-base">
+                <p className="font-body text-sm leading-7 text-sky-50/95 md:text-base">
                   We focus on fully custom, code-driven development using modern frameworks to ensure performance, scalability, and long-term reliability.
                 </p>
               </div>
@@ -355,8 +355,8 @@ export function HomePage() {
                     <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)] transition duration-300 group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_28px_rgba(56,189,248,0.28)]">
                       {card.icon}
                     </div>
-                    <h3 className="relative mt-6 text-xl font-semibold text-white">{card.title}</h3>
-                    <p className="relative mt-3 text-sm leading-7 text-slate-300">{card.description}</p>
+                    <h3 className="relative mt-6 font-heading text-xl font-semibold tracking-[-0.035em] text-white">{card.title}</h3>
+                    <p className="relative mt-3 font-body text-sm leading-7 text-slate-300/85">{card.description}</p>
                   </motion.article>
                 ))}
               </div>
@@ -367,7 +367,7 @@ export function HomePage() {
         <motion.section id="projects" className="section-container relative space-y-6" {...fadeUp}>
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
-              <p className="text-sm uppercase tracking-[0.3em] text-accent">Portfolio</p>
+              <p className="eyebrow">Portfolio</p>
               <h2 className="section-heading">{t.projectsTitle}</h2>
             </div>
             <p className="section-copy">{t.projectsSubtitle}</p>
@@ -380,9 +380,9 @@ export function HomePage() {
         </motion.section>
 
         <motion.section className="section-container" id="stack" {...fadeUp}>
-          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
-              <p className="text-sm uppercase tracking-[0.3em] text-accent">Capabilities</p>
+              <p className="eyebrow">Capabilities</p>
               <h2 className="section-heading">{t.stackTitle}</h2>
             </div>
             <p className="section-copy">{t.stackSubtitle}</p>
@@ -395,19 +395,19 @@ export function HomePage() {
         </motion.section>
 
         <motion.section id="about" className="section-container" {...fadeUp}>
-          <div className="glass-card relative overflow-hidden rounded-[34px] p-8 md:p-12 lg:p-14">
+          <div className="glass-card relative overflow-hidden rounded-[34px] p-8 md:p-12 lg:p-16">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div>
                 <p className="mb-4 text-sm uppercase tracking-[0.3em] text-accent">About CO_DEV</p>
                 <h2 className="section-heading max-w-3xl text-balance text-left">{t.aboutTitle}</h2>
-                <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{t.aboutText}</p>
+                <p className="body-copy mt-6 max-w-3xl text-lg md:leading-9">{t.aboutText}</p>
               </div>
               <div className="grid gap-4">
                 {[t.aboutHighlightOne, t.aboutHighlightTwo, t.aboutHighlightThree].map((item, index) => (
-                  <div key={item} className="rounded-[28px] border border-white/10 bg-slate-950/35 p-5">
-                    <p className="text-xs uppercase tracking-[0.24em] text-slate-400">0{index + 1}</p>
-                    <p className="mt-3 text-lg font-medium text-white">{item}</p>
+                  <div key={item} className="rounded-[28px] border border-white/10 bg-slate-950/35 p-6">
+                    <p className="font-body text-xs uppercase tracking-[0.24em] text-slate-400">0{index + 1}</p>
+                    <p className="mt-3 font-heading text-lg font-medium tracking-[-0.03em] text-white">{item}</p>
                   </div>
                 ))}
               </div>
@@ -421,10 +421,10 @@ export function HomePage() {
             <div className="absolute left-0 top-1/3 h-36 w-36 rounded-full bg-accent/10 blur-3xl" />
             <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl">
-                <p className="text-sm uppercase tracking-[0.3em] text-accent">Contact</p>
-                <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">{t.contactTitle}</h2>
-                <p className="mt-5 text-lg leading-8 text-slate-300">{t.contactText}</p>
-                <div className="mt-8 space-y-3 text-slate-200">
+                <p className="eyebrow">Contact</p>
+                <h2 className="mt-4 font-heading text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">{t.contactTitle}</h2>
+                <p className="body-copy mt-5 text-lg md:leading-9">{t.contactText}</p>
+                <div className="mt-8 space-y-3 font-body text-slate-200">
                   <p>
                     Email:{' '}
                     <a href="mailto:hello@co-dev.studio" className="text-primary transition hover:text-accent">

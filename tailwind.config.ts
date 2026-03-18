@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['var(--font-heading)', 'sans-serif'],
+        body: ['var(--font-body)', 'sans-serif']
+      },
       colors: {
         primary: '#38BDF8',
         secondary: '#0EA5E9',
