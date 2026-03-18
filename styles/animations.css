@@ -97,3 +97,18 @@
     animation: none !important;
   }
 }
+
+
+@media (max-width: 767px) {
+  .float {
+    animation: float 12s ease-in-out infinite;
+  }
+
+  .gradient-flow,
+  .ambient-glow,
+  .shimmer-border,
+  .drift,
+  .hero-orb {
+    animation: none !important;
+  }
+}
