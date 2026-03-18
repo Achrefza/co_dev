@@ -14,8 +14,8 @@ export function TechIcon({ label, icon }: TechIconProps) {
           {icon}
         </span>
         <div>
-          <p className="text-sm text-slate-400">Technology</p>
-          <span className="text-base font-medium text-slate-100">{label}</span>
+          <p className="font-body text-sm text-slate-400">Technology</p>
+          <span className="font-heading text-base font-medium tracking-[-0.03em] text-slate-100">{label}</span>
         </div>
       </div>
     </div>
