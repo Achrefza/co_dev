@@ -3,15 +3,17 @@ import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import '@/styles/animations.css';
 
-const headingFont = Sora({
+const sora = Sora({
   subsets: ['latin'],
-  variable: '--font-heading',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sora',
   display: 'swap'
 });
 
-const bodyFont = Inter({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-body',
+  weight: ['400', '500'],
+  variable: '--font-inter',
   display: 'swap'
 });
 
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
       <body className="font-body">{children}</body>
     </html>
   );
