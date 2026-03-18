@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { TechIcon } from '@/components/ui/TechIcon';
@@ -15,6 +15,51 @@ const techItems = [
   { label: 'TypeScript', icon: 'TS' },
   { label: 'Framer Motion', icon: '✦' },
   { label: 'Docker', icon: '🐳' }
+];
+
+const performanceCards: Array<{ title: string; description: string; icon: ReactNode }> = [
+  {
+    title: 'SEO Optimization',
+    description:
+      'Optimized for search engines with clean structure, meta tags, and best practices to improve visibility on Google.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M11 4a7 7 0 105.27 11.61l3.06 3.06 1.41-1.41-3.06-3.06A7 7 0 0011 4z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8.5 11.5l1.7 1.7 3.3-4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  {
+    title: 'Performance',
+    description: 'Fast-loading websites with optimized assets and high Lighthouse scores for better user experience.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M12 3l-4 10h4l-1 8 5-11h-4l0-7z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  {
+    title: 'Indexation',
+    description:
+      'Proper indexing setup to ensure your website is visible and correctly listed in search engines.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M7 7h10M7 12h6M7 17h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M17.5 14.5l3 3m0-3l-3 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
+      </svg>
+    )
+  },
+  {
+    title: 'Security & Quality',
+    description: 'Secure, scalable, and maintainable code built with modern development standards.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M12 3l7 3v5c0 4.6-2.8 8.9-7 10-4.2-1.1-7-5.4-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9.5 12l1.7 1.7 3.8-4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  }
 ];
 
 const fadeUp = {
@@ -165,6 +210,47 @@ export function HomePage() {
           </div>
         </section>
 
+        <motion.section className="section-container pt-10 md:pt-16" {...fadeUp}>
+          <div className="relative overflow-hidden rounded-[34px] border border-sky-200/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-6 py-10 shadow-[0_24px_80px_rgba(2,8,23,0.4)] md:px-10 md:py-14">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-sky-200/60 to-transparent" />
+            <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-sky-400/10 blur-3xl" />
+            <div className="absolute -right-10 bottom-4 h-44 w-44 rounded-full bg-cyan-300/10 blur-3xl" />
+            <div className="relative">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-sm uppercase tracking-[0.32em] text-sky-200">Performance &amp; SEO Excellence</p>
+                <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                  Built for Performance, Visibility &amp; Growth
+                </h2>
+                <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+                  We don’t just build websites — we engineer high-performance platforms optimized for search engines,
+                  speed, and scalability.
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 xl:grid-cols-4">
+                {performanceCards.map((card, index) => (
+                  <motion.article
+                    key={card.title}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.45, delay: index * 0.08, ease: 'easeOut' }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="group glass-card relative flex h-full flex-col rounded-[28px] border border-sky-200/10 bg-white/[0.05] p-6 transition duration-300 hover:border-sky-200/30 hover:shadow-[0_24px_60px_rgba(14,165,233,0.18),0_0_24px_rgba(56,189,248,0.18)]"
+                  >
+                    <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.18),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                    <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)]">
+                      {card.icon}
+                    </div>
+                    <h3 className="relative mt-6 text-xl font-semibold text-white">{card.title}</h3>
+                    <p className="relative mt-3 text-sm leading-7 text-slate-300">{card.description}</p>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         <motion.section id="projects" className="section-container relative space-y-6" {...fadeUp}>
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
@@ -229,7 +315,7 @@ export function HomePage() {
                   <p>
                     Email:{' '}
                     <a href="mailto:hello@co-dev.studio" className="text-primary transition hover:text-accent">
-                      hello@co-dev.studio
+                      contact.codev@proton.me
                     </a>
                   </p>
                   <p>
@@ -240,7 +326,7 @@ export function HomePage() {
                       rel="noreferrer"
                       className="text-primary transition hover:text-accent"
                     >
-                      linkedin.com/in/achref-ouerchfeni
+                      
                     </a>
                   </p>
                 </div>
