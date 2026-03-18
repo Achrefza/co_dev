@@ -15,10 +15,15 @@ const config: Config = {
         accent: '#7DD3FC'
       },
       backgroundImage: {
-        hero: 'radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.3), transparent 35%), radial-gradient(circle at 80% 10%, rgba(125, 211, 252, 0.2), transparent 40%), radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.25), transparent 35%)'
+        hero:
+          'radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.24), transparent 30%), radial-gradient(circle at 82% 14%, rgba(125, 211, 252, 0.18), transparent 26%), linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(8, 47, 73, 0.95) 45%, rgba(15, 23, 42, 1) 100%)'
       },
       boxShadow: {
-        glow: '0 0 40px rgba(56, 189, 248, 0.25)'
+        glow: '0 18px 60px rgba(56, 189, 248, 0.28)',
+        soft: '0 24px 80px rgba(15, 23, 42, 0.32)'
+      },
+      backgroundColor: {
+        'white/6': 'rgba(255,255,255,0.06)'
       }
     }
   },
