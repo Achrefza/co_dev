@@ -108,8 +108,7 @@ const webDevelopmentCards: Array<{ title: string; description: string; icon: Rea
   },
   {
     title: 'Portfolio Websites',
-    description:
-      'Clean and modern portfolios to showcase your work and personal brand.',
+    description: 'Clean and modern portfolios to showcase your work and personal brand.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
         <path d="M4 9.5A2.5 2.5 0 016.5 7H9l1.4-2h3.2L15 7h2.5A2.5 2.5 0 0120 9.5v7A2.5 2.5 0 0117.5 19h-11A2.5 2.5 0 014 16.5v-7z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
@@ -119,8 +118,7 @@ const webDevelopmentCards: Array<{ title: string; description: string; icon: Rea
   },
   {
     title: 'Custom Solutions',
-    description:
-      'Fully tailored development for unique ideas and complex requirements.',
+    description: 'Fully tailored development for unique ideas and complex requirements.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
         <path d="M12 4l2.5 5.1 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 4z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -132,8 +130,8 @@ const webDevelopmentCards: Array<{ title: string; description: string; icon: Rea
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.65, ease: 'easeOut' }
+  viewport: { once: true, amount: 0.18 },
+  transition: { duration: 0.7, ease: 'easeOut' }
 } as const;
 
 export function HomePage() {
@@ -142,21 +140,22 @@ export function HomePage() {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 grid-surface opacity-20" />
+      <div className="pointer-events-none absolute inset-0 grid-surface opacity-[0.16]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_58%)]" />
 
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/55 backdrop-blur-2xl">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/55 shadow-[0_14px_36px_rgba(2,8,23,0.24)] backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-12">
-          <a href="#hero" className="font-heading text-lg font-semibold tracking-[0.32em] text-white transition hover:text-primary">
+          <a href="#hero" className="font-heading text-lg font-semibold tracking-[0.32em] text-white transition duration-300 ease-in-out hover:text-primary">
             CO_DEV
           </a>
           <nav className="hidden items-center gap-8 font-body text-sm text-slate-300/90 md:flex">
-            <a href="#projects" className="transition hover:text-primary">
+            <a href="#projects" className="transition duration-300 ease-in-out hover:text-primary">
               {t.navProjects}
             </a>
-            <a href="#about" className="transition hover:text-primary">
+            <a href="#about" className="transition duration-300 ease-in-out hover:text-primary">
               {t.navAbout}
             </a>
-            <a href="#contact" className="transition hover:text-primary">
+            <a href="#contact" className="transition duration-300 ease-in-out hover:text-primary">
               {t.navContact}
             </a>
           </nav>
@@ -166,17 +165,19 @@ export function HomePage() {
 
       <main>
         <section id="hero" className="relative overflow-hidden bg-hero">
-          <div className="hero-orb left-[-6rem] top-[10%] h-60 w-60 bg-primary/30" />
-          <div className="hero-orb right-[-4rem] top-20 h-72 w-72 bg-secondary/25" />
-          <div className="hero-orb bottom-0 left-1/3 h-64 w-64 bg-accent/20" />
+          <div className="hero-orb left-[-6rem] top-[8%] h-72 w-72 bg-primary/30" />
+          <div className="hero-orb ambient-glow right-[-5rem] top-14 h-80 w-80 bg-secondary/25" />
+          <div className="hero-orb bottom-10 left-[34%] h-72 w-72 bg-accent/18" />
+          <div className="ambient-glow pointer-events-none absolute left-[12%] top-[20%] h-56 w-56 rounded-full bg-sky-300/10 blur-[120px]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_30%,rgba(255,255,255,0.08),transparent_20%),linear-gradient(180deg,rgba(2,6,23,0)_0%,rgba(2,6,23,0.3)_100%)]" />
 
-          <div className="section-container relative flex min-h-[92vh] items-center py-20 md:py-28">
-            <div className="grid w-full items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+          <div className="section-container relative flex min-h-[96vh] items-center py-20 md:py-28 lg:py-32">
+            <div className="grid w-full items-center gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
               <div className="relative z-10">
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="eyebrow inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs text-accent"
+                  className="eyebrow inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs text-accent shadow-[0_0_24px_rgba(56,189,248,0.08)]"
                 >
                   {t.studio}
                 </motion.span>
@@ -184,10 +185,10 @@ export function HomePage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.08, duration: 0.6 }}
-                  className="hero-title mt-8 max-w-4xl font-heading text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl xl:text-[5.4rem]"
+                  className="hero-title mt-8 max-w-5xl font-heading text-[3.5rem] font-semibold leading-[0.88] tracking-[-0.065em] text-white md:text-[5rem] xl:text-[6rem]"
                 >
-                  <span className="block text-white/95 drop-shadow-[0_0_24px_rgba(125,211,252,0.16)]">{t.heroTitleLead}</span>
-                  <span className="gradient-text gradient-flow block pb-2 drop-shadow-[0_0_30px_rgba(56,189,248,0.24)]">
+                  <span className="block text-white drop-shadow-[0_0_24px_rgba(125,211,252,0.14)]">{t.heroTitleLead}</span>
+                  <span className="gradient-text gradient-flow block pb-3 drop-shadow-[0_0_34px_rgba(56,189,248,0.22)]">
                     {t.heroTitleAccent}
                   </span>
                 </motion.h1>
@@ -195,7 +196,7 @@ export function HomePage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.16, duration: 0.6 }}
-                  className="body-copy mt-8 max-w-2xl text-lg text-slate-300/85 md:text-xl md:leading-9"
+                  className="body-copy mt-9 max-w-2xl text-lg text-slate-200/84 md:text-xl md:leading-9"
                 >
                   {t.tagline}
                 </motion.p>
@@ -204,7 +205,7 @@ export function HomePage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.24, duration: 0.6 }}
-                  className="mt-10 flex flex-wrap gap-4"
+                  className="mt-11 flex flex-wrap gap-4"
                 >
                   <a href="#projects" className="premium-button-primary">
                     {t.viewProjects}
@@ -218,11 +219,11 @@ export function HomePage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.32, duration: 0.6 }}
-                  className="mt-12 grid max-w-xl gap-4 sm:grid-cols-2"
+                  className="mt-14 grid max-w-2xl gap-4 sm:grid-cols-2"
                 >
                   {[t.heroMetricOne, t.heroMetricTwo].map((item) => (
-                    <div key={item} className="glass-card rounded-2xl px-5 py-4 font-body text-sm leading-7 text-slate-200/95">
-                      <span className="mb-2 block h-2 w-16 rounded-full bg-gradient-to-r from-primary to-accent" />
+                    <div key={item} className="glass-card rounded-[26px] px-6 py-5 font-body text-sm leading-7 text-slate-200/95">
+                      <span className="mb-3 block h-2 w-16 rounded-full bg-gradient-to-r from-primary via-sky-300 to-accent shadow-[0_0_24px_rgba(56,189,248,0.22)]" />
                       {item}
                     </div>
                   ))}
@@ -235,13 +236,14 @@ export function HomePage() {
                 transition={{ delay: 0.18, duration: 0.7 }}
                 className="float relative mx-auto w-full max-w-xl"
               >
-                <div className="glass-card relative overflow-hidden rounded-[32px] border-white/15 p-6 shadow-soft md:p-7">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.16),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.1),transparent)]" />
+                <div className="absolute inset-[-10%] rounded-[40px] bg-[radial-gradient(circle,rgba(56,189,248,0.18),transparent_60%)] blur-3xl" />
+                <div className="glass-card relative overflow-hidden rounded-[34px] border-white/15 p-7 shadow-[0_30px_110px_rgba(2,8,23,0.46),0_0_45px_rgba(56,189,248,0.08)] md:p-8">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.1),transparent)]" />
                   <div className="relative">
-                    <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-5">
                       <div>
                         <p className="eyebrow text-xs text-accent">{t.heroCardLabel}</p>
-                        <h2 className="mt-2 font-heading text-2xl font-semibold tracking-[-0.04em] text-white">{t.heroCardTitle}</h2>
+                        <h2 className="mt-2 font-heading text-[1.9rem] font-semibold tracking-[-0.045em] text-white">{t.heroCardTitle}</h2>
                       </div>
                       <div className="flex gap-2">
                         <span className="h-3 w-3 rounded-full bg-rose-400/70" />
@@ -250,21 +252,21 @@ export function HomePage() {
                       </div>
                     </div>
 
-                    <p className="body-copy mt-6 max-w-md text-sm">{t.heroCardText}</p>
+                    <p className="body-copy mt-7 max-w-md text-sm text-slate-200/76">{t.heroCardText}</p>
 
-                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-3xl border border-white/10 bg-slate-950/40 p-5">
+                    <div className="mt-9 grid gap-4 sm:grid-cols-2">
+                      <div className="rounded-[28px] border border-white/10 bg-slate-950/42 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                         <p className="font-body text-xs uppercase tracking-[0.24em] text-slate-400">Delivery</p>
                         <p className="mt-3 font-heading text-4xl font-semibold tracking-[-0.05em] text-white">03</p>
-                        <p className="mt-3 font-body text-sm leading-7 text-slate-300/85">Discovery, design system, launch-ready frontend.</p>
+                        <p className="mt-3 font-body text-sm leading-7 text-slate-300/82">Discovery, design system, launch-ready frontend.</p>
                       </div>
-                      <div className="rounded-3xl border border-primary/20 bg-primary/10 p-5">
+                      <div className="rounded-[28px] border border-primary/20 bg-primary/10 p-6 shadow-[0_18px_40px_rgba(56,189,248,0.08)]">
                         <p className="text-xs uppercase tracking-[0.24em] text-accent">Quality signal</p>
-                        <div className="mt-4 space-y-3">
+                        <div className="mt-4 space-y-3.5">
                           {['UI direction', 'Motion polish', 'Performance'].map((item) => (
                             <div key={item} className="flex items-center justify-between font-body text-sm text-slate-100">
                               <span>{item}</span>
-                              <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_16px_rgba(125,211,252,0.7)]" />
+                              <span className="h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_18px_rgba(125,211,252,0.8)]" />
                             </div>
                           ))}
                         </div>
@@ -277,24 +279,24 @@ export function HomePage() {
           </div>
         </section>
 
-        <motion.section className="section-container pt-10 md:pt-16" {...fadeUp}>
-          <div className="relative overflow-hidden rounded-[34px] border border-sky-200/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-6 py-10 shadow-[0_24px_80px_rgba(2,8,23,0.4)] md:px-10 md:py-14">
+        <motion.section className="section-container section-reveal pt-12 md:pt-18" {...fadeUp}>
+          <div className="premium-surface px-6 py-12 md:px-10 md:py-16">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-sky-200/60 to-transparent" />
-            <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-sky-400/10 blur-3xl" />
-            <div className="absolute -right-10 bottom-4 h-44 w-44 rounded-full bg-cyan-300/10 blur-3xl" />
+            <div className="absolute -left-10 top-8 h-44 w-44 rounded-full bg-sky-400/10 blur-3xl" />
+            <div className="absolute -right-10 bottom-4 h-52 w-52 rounded-full bg-cyan-300/10 blur-3xl" />
             <div className="relative">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="eyebrow text-sky-200">Performance &amp; SEO Excellence</p>
                 <h2 className="mt-5 font-heading text-3xl font-semibold tracking-[-0.045em] text-white md:text-5xl">
                   Built for Performance, Visibility &amp; Growth
                 </h2>
-                <p className="mx-auto mt-5 max-w-2xl font-body text-base leading-8 text-slate-300/85 md:text-lg">
+                <p className="mx-auto mt-6 max-w-2xl font-body text-base leading-8 text-slate-300/82 md:text-lg md:leading-9">
                   We don’t just build websites — we engineer high-performance platforms optimized for search engines,
                   speed, and scalability.
                 </p>
               </div>
 
-              <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 xl:grid-cols-4">
+              <div className="mt-12 grid gap-6 md:mt-14 md:grid-cols-2 xl:grid-cols-4">
                 {performanceCards.map((card, index) => (
                   <motion.article
                     key={card.title}
@@ -302,15 +304,15 @@ export function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.45, delay: index * 0.08, ease: 'easeOut' }}
-                    whileHover={{ y: -8, scale: 1.02 }}
-                    className="group glass-card relative flex h-full flex-col rounded-[28px] border border-sky-200/10 bg-white/[0.05] p-6 transition duration-300 hover:border-sky-200/30 hover:shadow-[0_24px_60px_rgba(14,165,233,0.18),0_0_24px_rgba(56,189,248,0.18)]"
+                    whileHover={{ y: -10, scale: 1.024 }}
+                    className="group glass-card relative flex h-full flex-col rounded-[30px] border border-sky-200/10 bg-white/[0.06] p-7 transition-all duration-300 ease-in-out hover:border-sky-200/30 hover:shadow-[0_24px_60px_rgba(14,165,233,0.16),0_0_28px_rgba(56,189,248,0.18)]"
                   >
-                    <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.18),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                    <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)]">
+                    <div className="absolute inset-0 rounded-[30px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.2),transparent_52%)] opacity-0 transition duration-300 ease-in-out group-hover:opacity-100" />
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-[22px] border border-sky-200/20 bg-sky-400/12 text-sky-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)] transition duration-300 ease-in-out group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_30px_rgba(56,189,248,0.25)]">
                       {card.icon}
                     </div>
-                    <h3 className="relative mt-6 font-heading text-xl font-semibold tracking-[-0.035em] text-white">{card.title}</h3>
-                    <p className="relative mt-3 font-body text-sm leading-7 text-slate-300/85">{card.description}</p>
+                    <h3 className="relative mt-7 font-heading text-xl font-semibold tracking-[-0.035em] text-white">{card.title}</h3>
+                    <p className="relative mt-3 font-body text-sm leading-7 text-slate-300/82">{card.description}</p>
                   </motion.article>
                 ))}
               </div>
@@ -318,8 +320,8 @@ export function HomePage() {
           </div>
         </motion.section>
 
-        <motion.section className="section-container pt-10 md:pt-16" {...fadeUp}>
-          <div className="relative overflow-hidden rounded-[34px] border border-sky-200/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-6 py-10 shadow-[0_24px_80px_rgba(2,8,23,0.4)] md:px-10 md:py-14">
+        <motion.section className="section-container section-reveal pt-12 md:pt-18" {...fadeUp}>
+          <div className="premium-surface px-6 py-12 md:px-10 md:py-16">
             <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-sky-200/60 to-transparent" />
             <div className="absolute -left-12 top-10 h-44 w-44 rounded-full bg-sky-400/12 blur-3xl" />
             <div className="absolute -right-10 bottom-6 h-52 w-52 rounded-full bg-cyan-300/12 blur-3xl" />
@@ -329,18 +331,18 @@ export function HomePage() {
                 <h2 className="mt-5 font-heading text-3xl font-semibold tracking-[-0.045em] text-white md:text-5xl">
                   Custom Web Development Services
                 </h2>
-                <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
+                <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300/82 md:text-lg md:leading-9">
                   We build high-quality, fully custom websites tailored to your business needs — using modern technologies and clean, scalable code.
                 </p>
               </div>
 
-              <div className="mt-8 rounded-[28px] border border-sky-200/15 bg-sky-400/10 px-6 py-5 text-center shadow-[0_18px_60px_rgba(14,165,233,0.12)] md:mt-10">
-                <p className="font-body text-sm leading-7 text-sky-50/95 md:text-base">
+              <div className="mt-10 rounded-[30px] border border-sky-200/15 bg-sky-400/10 px-6 py-6 text-center shadow-[0_18px_60px_rgba(14,165,233,0.12)] md:mt-12">
+                <p className="font-body text-sm leading-7 text-sky-50/95 md:text-base md:leading-8">
                   We focus on fully custom, code-driven development using modern frameworks to ensure performance, scalability, and long-term reliability.
                 </p>
               </div>
 
-              <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 xl:grid-cols-3">
+              <div className="mt-12 grid gap-6 md:mt-14 md:grid-cols-2 xl:grid-cols-3">
                 {webDevelopmentCards.map((card, index) => (
                   <motion.article
                     key={card.title}
@@ -348,15 +350,15 @@ export function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.25 }}
                     transition={{ duration: 0.45, delay: index * 0.06, ease: 'easeOut' }}
-                    whileHover={{ y: -8, scale: 1.03 }}
-                    className="group glass-card relative flex h-full flex-col rounded-[28px] border border-sky-200/10 bg-white/[0.05] p-6 transition duration-300 hover:border-sky-200/35 hover:shadow-[0_24px_60px_rgba(14,165,233,0.18),0_0_24px_rgba(56,189,248,0.24)]"
+                    whileHover={{ y: -10, scale: 1.024 }}
+                    className="group glass-card relative flex h-full flex-col rounded-[30px] border border-sky-200/10 bg-white/[0.06] p-7 transition-all duration-300 ease-in-out hover:border-sky-200/35 hover:shadow-[0_24px_60px_rgba(14,165,233,0.16),0_0_28px_rgba(56,189,248,0.2)]"
                   >
-                    <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.2),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                    <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)] transition duration-300 group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_28px_rgba(56,189,248,0.28)]">
+                    <div className="absolute inset-0 rounded-[30px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.18),transparent_52%)] opacity-0 transition duration-300 ease-in-out group-hover:opacity-100" />
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-[22px] border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)] transition duration-300 ease-in-out group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_28px_rgba(56,189,248,0.28)]">
                       {card.icon}
                     </div>
-                    <h3 className="relative mt-6 font-heading text-xl font-semibold tracking-[-0.035em] text-white">{card.title}</h3>
-                    <p className="relative mt-3 font-body text-sm leading-7 text-slate-300/85">{card.description}</p>
+                    <h3 className="relative mt-7 font-heading text-xl font-semibold tracking-[-0.035em] text-white">{card.title}</h3>
+                    <p className="relative mt-3 font-body text-sm leading-7 text-slate-300/82">{card.description}</p>
                   </motion.article>
                 ))}
               </div>
@@ -364,7 +366,7 @@ export function HomePage() {
           </div>
         </motion.section>
 
-        <motion.section id="projects" className="section-container relative space-y-6" {...fadeUp}>
+        <motion.section id="projects" className="section-container section-reveal relative space-y-7" {...fadeUp}>
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
               <p className="eyebrow">Portfolio</p>
@@ -372,40 +374,41 @@ export function HomePage() {
             </div>
             <p className="section-copy">{t.projectsSubtitle}</p>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} visitLabel={t.visitWebsite} />
             ))}
           </div>
         </motion.section>
 
-        <motion.section className="section-container" id="stack" {...fadeUp}>
-          <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <motion.section className="section-container section-reveal" id="stack" {...fadeUp}>
+          <div className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
               <p className="eyebrow">Capabilities</p>
               <h2 className="section-heading">{t.stackTitle}</h2>
             </div>
             <p className="section-copy">{t.stackSubtitle}</p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {techItems.map((item) => (
               <TechIcon key={item.label} label={item.label} icon={<span>{item.icon}</span>} />
             ))}
           </div>
         </motion.section>
 
-        <motion.section id="about" className="section-container" {...fadeUp}>
-          <div className="glass-card relative overflow-hidden rounded-[34px] p-8 md:p-12 lg:p-16">
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+        <motion.section id="about" className="section-container section-reveal" {...fadeUp}>
+          <div className="premium-surface p-8 md:p-12 lg:p-16">
+            <div className="absolute right-0 top-0 h-44 w-44 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute left-10 bottom-6 h-40 w-40 rounded-full bg-accent/8 blur-3xl" />
             <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div>
                 <p className="mb-4 text-sm uppercase tracking-[0.3em] text-accent">About CO_DEV</p>
                 <h2 className="section-heading max-w-3xl text-balance text-left">{t.aboutTitle}</h2>
-                <p className="body-copy mt-6 max-w-3xl text-lg md:leading-9">{t.aboutText}</p>
+                <p className="body-copy mt-6 max-w-3xl text-lg text-slate-200/78 md:leading-9">{t.aboutText}</p>
               </div>
               <div className="grid gap-4">
                 {[t.aboutHighlightOne, t.aboutHighlightTwo, t.aboutHighlightThree].map((item, index) => (
-                  <div key={item} className="rounded-[28px] border border-white/10 bg-slate-950/35 p-6">
+                  <div key={item} className="rounded-[28px] border border-white/10 bg-slate-950/35 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-300 ease-in-out hover:border-primary/25 hover:bg-slate-950/45">
                     <p className="font-body text-xs uppercase tracking-[0.24em] text-slate-400">0{index + 1}</p>
                     <p className="mt-3 font-heading text-lg font-medium tracking-[-0.03em] text-white">{item}</p>
                   </div>
@@ -415,19 +418,22 @@ export function HomePage() {
           </div>
         </motion.section>
 
-        <motion.section id="contact" className="section-container pt-8 pb-24" {...fadeUp}>
-          <div className="relative overflow-hidden rounded-[34px] border border-primary/20 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-8 shadow-soft md:p-12 lg:p-14">
-            <div className="absolute -right-10 top-0 h-44 w-44 rounded-full bg-primary/20 blur-3xl" />
-            <div className="absolute left-0 top-1/3 h-36 w-36 rounded-full bg-accent/10 blur-3xl" />
-            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <motion.section id="contact" className="section-container section-reveal pt-10 pb-28" {...fadeUp}>
+          <div className="relative overflow-hidden rounded-[36px] border border-primary/20 bg-[linear-gradient(135deg,rgba(2,6,23,0.96),rgba(10,20,36,0.94)_45%,rgba(8,47,73,0.92)_100%)] p-8 shadow-[0_30px_100px_rgba(2,8,23,0.46)] md:p-12 lg:p-14">
+            <div className="absolute -right-10 top-0 h-48 w-48 rounded-full bg-primary/22 blur-3xl" />
+            <div className="absolute left-0 top-1/3 h-40 w-40 rounded-full bg-accent/12 blur-3xl" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_42%)]" />
+            <div className="relative flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl">
                 <p className="eyebrow">Contact</p>
-                <h2 className="mt-4 font-heading text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">{t.contactTitle}</h2>
-                <p className="body-copy mt-5 text-lg md:leading-9">{t.contactText}</p>
-                <div className="mt-8 space-y-3 font-body text-slate-200">
+                <h2 className="mt-5 font-heading text-4xl font-semibold tracking-[-0.055em] text-white md:text-5xl lg:text-[3.5rem]">
+                  {t.contactTitle}
+                </h2>
+                <p className="body-copy mt-6 text-lg text-slate-200/80 md:leading-9">{t.contactText}</p>
+                <div className="mt-9 space-y-3 font-body text-slate-200/92">
                   <p>
                     Email:{' '}
-                    <a href="mailto:hello@co-dev.studio" className="text-primary transition hover:text-accent">
+                    <a href="mailto:hello@co-dev.studio" className="text-sky-100 transition duration-300 ease-in-out hover:text-accent">
                       contact.codev@proton.me
                     </a>
                   </p>
@@ -437,9 +443,9 @@ export function HomePage() {
                       href="https://www.linkedin.com"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-primary transition hover:text-accent"
+                      className="text-sky-100 transition duration-300 ease-in-out hover:text-accent"
                     >
-                      
+                      linkedin.com
                     </a>
                   </p>
                 </div>
@@ -448,7 +454,7 @@ export function HomePage() {
                 <a href="mailto:hello@co-dev.studio" className="premium-button-primary">
                   {t.hireMe}
                 </a>
-                <a href="#projects" className="premium-button-secondary">
+                <a href="#projects" className="premium-button-secondary border-white/20 bg-white/[0.04]">
                   {t.viewProjects}
                 </a>
               </div>
