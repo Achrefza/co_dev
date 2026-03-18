@@ -418,7 +418,7 @@ export function HomePage() {
                 </motion.div>
 
                 <div className="mt-10 grid gap-4 md:mt-14 md:gap-6 md:grid-cols-2 xl:grid-cols-3">
-                  {webDevelopmentCards.map((card, index) => (
+                  {webDevelopmentCards.map((card) => (
                     <motion.article
                       key={card.title}
                       whileHover={cardHover}
@@ -468,7 +468,7 @@ export function HomePage() {
                 <p className="section-copy">{t.stackSubtitle}</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
-                {techItems.map((item, index) => (
+                {techItems.map((item) => (
                   <div key={item.label}>
                     <TechIcon label={item.label} icon={<span>{item.icon}</span>} />
                   </div>
