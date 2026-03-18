@@ -10,9 +10,7 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
-body,
-body * {
+* {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -20,16 +18,11 @@ body * {
 }
 
 input,
-textarea,
-select,
-option,
-button,
-fieldset,
-legend {
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
+textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 body {
@@ -134,11 +127,11 @@ body {
   }
 
   .premium-button-primary {
-    @apply premium-button border border-primary/60 bg-gradient-to-r from-primary via-sky-300 to-accent text-slate-950 shadow-[0_20px_55px_rgba(56,189,248,0.26),0_0_28px_rgba(125,211,252,0.2)] hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(56,189,248,0.34),0_0_40px_rgba(125,211,252,0.28)];
+    @apply inline-flex items-center justify-center rounded-full border border-primary/60 bg-gradient-to-r from-primary via-sky-300 to-accent px-6 py-3 text-sm font-semibold tracking-[0.01em] text-slate-950 transition-all duration-300 ease-in-out shadow-[0_20px_55px_rgba(56,189,248,0.26),0_0_28px_rgba(125,211,252,0.2)] hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(56,189,248,0.34),0_0_40px_rgba(125,211,252,0.28)] md:px-7 md:py-3.5 md:text-base;
   }
 
   .premium-button-secondary {
-    @apply premium-button border border-white/15 bg-white/[0.03] text-white hover:-translate-y-1 hover:border-primary/55 hover:bg-white/[0.07] hover:text-sky-100;
+    @apply inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-primary/55 hover:bg-white/[0.07] hover:text-sky-100 md:px-7 md:py-3.5 md:text-base;
   }
 
   .section-reveal {
