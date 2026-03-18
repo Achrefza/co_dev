@@ -62,6 +62,73 @@ const performanceCards: Array<{ title: string; description: string; icon: ReactN
   }
 ];
 
+const webDevelopmentCards: Array<{ title: string; description: string; icon: ReactNode }> = [
+  {
+    title: 'Business & Vitrine Websites',
+    description:
+      'Modern and professional websites designed to represent your brand and attract clients.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M4 7.5h16M9 17h6M6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  {
+    title: 'E-commerce Platforms',
+    description:
+      'Custom online stores with optimized performance, user experience, and scalability.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M4 6h2l2.2 9.2A2 2 0 0010.15 17H18a2 2 0 001.95-1.55L21 9H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 20a1 1 0 100-2 1 1 0 000 2zM18 20a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  {
+    title: 'Landing Pages',
+    description:
+      'High-converting landing pages designed for marketing campaigns and lead generation.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5 6v12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    )
+  },
+  {
+    title: 'Web Applications',
+    description:
+      'Custom-built web apps, dashboards, and tools tailored to your specific business needs.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M9 4v16M4 10h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    )
+  },
+  {
+    title: 'Portfolio Websites',
+    description:
+      'Clean and modern portfolios to showcase your work and personal brand.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M4 9.5A2.5 2.5 0 016.5 7H9l1.4-2h3.2L15 7h2.5A2.5 2.5 0 0120 9.5v7A2.5 2.5 0 0117.5 19h-11A2.5 2.5 0 014 16.5v-7z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.8" />
+      </svg>
+    )
+  },
+  {
+    title: 'Custom Solutions',
+    description:
+      'Fully tailored development for unique ideas and complex requirements.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <path d="M12 4l2.5 5.1 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 4z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  }
+];
+
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -240,6 +307,52 @@ export function HomePage() {
                   >
                     <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.18),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
                     <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)]">
+                      {card.icon}
+                    </div>
+                    <h3 className="relative mt-6 text-xl font-semibold text-white">{card.title}</h3>
+                    <p className="relative mt-3 text-sm leading-7 text-slate-300">{card.description}</p>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section className="section-container pt-10 md:pt-16" {...fadeUp}>
+          <div className="relative overflow-hidden rounded-[34px] border border-sky-200/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-6 py-10 shadow-[0_24px_80px_rgba(2,8,23,0.4)] md:px-10 md:py-14">
+            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-sky-200/60 to-transparent" />
+            <div className="absolute -left-12 top-10 h-44 w-44 rounded-full bg-sky-400/12 blur-3xl" />
+            <div className="absolute -right-10 bottom-6 h-52 w-52 rounded-full bg-cyan-300/12 blur-3xl" />
+            <div className="relative">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-sm uppercase tracking-[0.32em] text-sky-200">Premium Development Services</p>
+                <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                  Custom Web Development Services
+                </h2>
+                <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
+                  We build high-quality, fully custom websites tailored to your business needs — using modern technologies and clean, scalable code.
+                </p>
+              </div>
+
+              <div className="mt-8 rounded-[28px] border border-sky-200/15 bg-sky-400/10 px-6 py-5 text-center shadow-[0_18px_60px_rgba(14,165,233,0.12)] md:mt-10">
+                <p className="text-sm leading-7 text-sky-50 md:text-base">
+                  We focus on fully custom, code-driven development using modern frameworks to ensure performance, scalability, and long-term reliability.
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 xl:grid-cols-3">
+                {webDevelopmentCards.map((card, index) => (
+                  <motion.article
+                    key={card.title}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ duration: 0.45, delay: index * 0.06, ease: 'easeOut' }}
+                    whileHover={{ y: -8, scale: 1.03 }}
+                    className="group glass-card relative flex h-full flex-col rounded-[28px] border border-sky-200/10 bg-white/[0.05] p-6 transition duration-300 hover:border-sky-200/35 hover:shadow-[0_24px_60px_rgba(14,165,233,0.18),0_0_24px_rgba(56,189,248,0.24)]"
+                  >
+                    <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.2),transparent_52%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                    <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_24px_rgba(56,189,248,0.15)] transition duration-300 group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_28px_rgba(56,189,248,0.28)]">
                       {card.icon}
                     </div>
                     <h3 className="relative mt-6 text-xl font-semibold text-white">{card.title}</h3>
