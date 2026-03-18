@@ -374,7 +374,7 @@ export function HomePage() {
                 </div>
 
                 <div className="mt-10 grid gap-4 md:mt-14 md:gap-6 md:grid-cols-2 xl:grid-cols-4">
-                  {performanceCards.map((card, index) => (
+                  {performanceCards.map((card) => (
                     <motion.article
                       key={card.title}
                       whileHover={cardHover}
