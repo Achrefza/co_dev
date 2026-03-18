@@ -11,13 +11,64 @@ html {
 }
 
 body {
-  @apply bg-dark text-slate-100 antialiased;
+  @apply min-h-screen bg-dark text-slate-100 antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 26%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 24%),
+    linear-gradient(180deg, #020617 0%, #0f172a 34%, #111827 100%);
 }
 
-.section-container {
-  @apply mx-auto max-w-6xl px-6 py-20 md:px-10;
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: white;
 }
 
-.glass-card {
-  @apply border border-white/20 bg-white/10 backdrop-blur-xl;
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-7xl px-6 py-24 md:px-10 lg:px-12;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-base leading-7 text-slate-300 md:text-lg;
+  }
+
+  .glass-card {
+    @apply border border-white/10 bg-white/6 backdrop-blur-2xl;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 30px 80px rgba(2, 8, 23, 0.45),
+      0 0 0 1px rgba(125, 211, 252, 0.04);
+  }
+
+  .grid-surface {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 84px 84px;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-sky-200 to-primary bg-clip-text text-transparent;
+  }
+
+  .hero-orb {
+    @apply absolute rounded-full blur-3xl;
+    animation: pulseGlow 9s ease-in-out infinite;
+  }
+
+  .premium-button {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition duration-300 md:px-7 md:py-3.5 md:text-base;
+  }
+
+  .premium-button-primary {
+    @apply premium-button border border-primary/50 bg-gradient-to-r from-primary via-sky-400 to-accent text-slate-950 shadow-glow hover:-translate-y-0.5 hover:shadow-[0_0_45px_rgba(56,189,248,0.45)];
+  }
+
+  .premium-button-secondary {
+    @apply premium-button border border-white/15 bg-white/[0.03] text-white hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/10 hover:text-sky-100;
+  }
 }
