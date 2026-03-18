@@ -315,7 +315,7 @@ export function HomePage() {
                   <p>
                     Email:{' '}
                     <a href="mailto:hello@co-dev.studio" className="text-primary transition hover:text-accent">
-                      hello@co-dev.studio
+                      contact.codev@proton.me
                     </a>
                   </p>
                   <p>
@@ -326,7 +326,7 @@ export function HomePage() {
                       rel="noreferrer"
                       className="text-primary transition hover:text-accent"
                     >
-                      linkedin.com/in/achref-ouerchfeni
+                      
                     </a>
                   </p>
                 </div>
