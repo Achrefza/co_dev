@@ -26,12 +26,17 @@ textarea {
 }
 
 body {
-  @apply min-h-screen bg-dark font-body text-[15px] leading-7 text-slate-100 antialiased md:text-base;
+  min-height: 100vh;
+  background-color: #0f172a;
   background-image:
     radial-gradient(circle at 12% 0%, rgba(56, 189, 248, 0.2), transparent 24%),
     radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.14), transparent 22%),
     radial-gradient(circle at 50% 32%, rgba(125, 211, 252, 0.05), transparent 30%),
     linear-gradient(180deg, #020617 0%, #081121 28%, #0f172a 58%, #111827 100%);
+  color: rgb(241 245 249);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,111 +44,228 @@ body {
 
 ::selection {
   background: rgba(56, 189, 248, 0.3);
-  color: white;
+  color: #fff;
 }
 
-@layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-semibold tracking-[-0.035em] text-white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-family: var(--font-sora), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+p,
+li,
+span,
+a,
+label,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.section-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  padding: 7rem 1.5rem;
+}
+
+.section-heading {
+  color: #fff;
+  font-family: var(--font-sora), sans-serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.section-copy {
+  max-width: 42rem;
+  color: rgba(203, 213, 225, 0.78);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.eyebrow {
+  color: #7dd3fc;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.body-copy {
+  color: rgba(203, 213, 225, 0.76);
+  font-family: var(--font-inter), sans-serif;
+  line-height: 2rem;
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 30px 90px rgba(2, 8, 23, 0.48),
+    0 0 0 1px rgba(125, 211, 252, 0.03);
+}
+
+.grid-surface {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 84px 84px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #fff, #e0f2fe, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-title {
+  text-shadow: 0 0 40px rgba(56, 189, 248, 0.18);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  animation: pulseGlow 9s ease-in-out infinite;
+}
+
+.premium-surface {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 34px;
+  background-color: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 30px 90px rgba(2, 8, 23, 0.42),
+    0 0 0 1px rgba(125, 211, 252, 0.04);
+}
+
+.premium-button,
+.premium-button-primary,
+.premium-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out,
+    background-color 300ms ease-in-out, border-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+}
+
+.premium-button-primary {
+  border: 1px solid rgba(56, 189, 248, 0.6);
+  background: linear-gradient(to right, #38bdf8, #7dd3fc, #7dd3fc);
+  color: rgb(2 6 23);
+  box-shadow:
+    0 20px 55px rgba(56, 189, 248, 0.26),
+    0 0 28px rgba(125, 211, 252, 0.2);
+}
+
+.premium-button-primary:hover {
+  transform: translateY(-0.25rem);
+  box-shadow:
+    0 28px 70px rgba(56, 189, 248, 0.34),
+    0 0 40px rgba(125, 211, 252, 0.28);
+}
+
+.premium-button-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #fff;
+}
+
+.premium-button-secondary:hover {
+  transform: translateY(-0.25rem);
+  border-color: rgba(56, 189, 248, 0.55);
+  background-color: rgba(255, 255, 255, 0.07);
+  color: rgb(224 242 254);
+}
+
+.section-reveal {
+  position: relative;
+}
+
+.section-reveal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top, rgba(125, 211, 252, 0.08), transparent 56%);
+  opacity: 0.85;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
   }
 
-  p,
-  li,
-  span,
-  a,
-  label,
-  input,
-  textarea,
-  select,
-  button {
-    @apply font-body;
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
   }
 }
 
-@layer components {
+@media (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
   .section-container {
-    @apply mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-32 lg:px-12 lg:py-36;
+    padding: 8rem 2.5rem;
   }
 
   .section-heading {
-    @apply font-heading text-3xl font-semibold tracking-[-0.05em] text-white md:text-4xl lg:text-5xl;
+    font-size: 2.25rem;
   }
 
   .section-copy {
-    @apply max-w-2xl font-body text-base leading-8 text-slate-300/78 md:text-lg md:leading-9;
-  }
-
-  .eyebrow {
-    @apply font-body text-sm uppercase tracking-[0.32em] text-accent;
+    font-size: 1.125rem;
+    line-height: 2.25rem;
   }
 
   .body-copy {
-    @apply font-body leading-8 text-slate-300/76 md:leading-9;
+    line-height: 2.25rem;
   }
 
-  .glass-card {
-    @apply border border-white/10 bg-white/[0.055] backdrop-blur-2xl;
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      0 30px 90px rgba(2, 8, 23, 0.48),
-      0 0 0 1px rgba(125, 211, 252, 0.03);
-  }
-
-  .grid-surface {
-    background-image:
-      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-    background-size: 84px 84px;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-white via-sky-100 to-primary bg-clip-text text-transparent;
-  }
-
-  .hero-title {
-    text-shadow: 0 0 40px rgba(56, 189, 248, 0.18);
-  }
-
-  .hero-orb {
-    @apply absolute rounded-full blur-3xl;
-    animation: pulseGlow 9s ease-in-out infinite;
-  }
-
-  .premium-surface {
-    @apply relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.045] backdrop-blur-2xl;
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.09),
-      0 30px 90px rgba(2, 8, 23, 0.42),
-      0 0 0 1px rgba(125, 211, 252, 0.04);
-  }
-
-  .premium-button {
-    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold tracking-[0.01em] transition-all duration-300 ease-in-out md:px-7 md:py-3.5 md:text-base;
-  }
-
-  .premium-button-primary {
-    @apply inline-flex items-center justify-center rounded-full border border-primary/60 bg-gradient-to-r from-primary via-sky-300 to-accent px-6 py-3 text-sm font-semibold tracking-[0.01em] text-slate-950 transition-all duration-300 ease-in-out shadow-[0_20px_55px_rgba(56,189,248,0.26),0_0_28px_rgba(125,211,252,0.2)] hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(56,189,248,0.34),0_0_40px_rgba(125,211,252,0.28)] md:px-7 md:py-3.5 md:text-base;
-  }
-
+  .premium-button,
+  .premium-button-primary,
   .premium-button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold tracking-[0.01em] text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-primary/55 hover:bg-white/[0.07] hover:text-sky-100 md:px-7 md:py-3.5 md:text-base;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 9rem 3rem;
   }
 
-  .section-reveal {
-    @apply relative;
-  }
-
-  .section-reveal::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(circle at top, rgba(125, 211, 252, 0.08), transparent 56%);
-    opacity: 0.85;
+  .section-heading {
+    font-size: 3rem;
   }
 }
