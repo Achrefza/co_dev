@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020617"/>
+  <circle cx="186" cy="111" r="164" fill="#0EA5E9" fill-opacity="0.18"/>
+  <circle cx="1010" cy="507" r="170" fill="#38BDF8" fill-opacity="0.18"/>
+  <rect x="84" y="78" width="1032" height="474" rx="36" fill="url(#paint0_linear)" fill-opacity="0.24" stroke="#7DD3FC" stroke-opacity="0.28"/>
+  <path d="M188 476V154H254.867C314.645 154 360.933 170.489 393.733 203.467C426.533 236.267 442.933 281.844 442.933 340.2C442.933 398.2 426.356 443.689 393.2 476.667C360.4 509.467 313.578 525.867 252.733 525.867H188V476ZM248.467 465.467C291.356 465.467 323.356 454.667 344.467 433.067C365.756 411.289 376.4 380.333 376.4 340.2C376.4 299.711 365.667 268.667 344.2 247.067C323.089 225.289 291.089 214.4 248.2 214.4H240.667V465.467H248.467Z" fill="white"/>
+  <path d="M510.932 489L655.065 154H724.665L869.332 489H799.132L768.332 411.8H611.532L580.732 489H510.932ZM633.932 355.267H745.932L690.865 218.867L633.932 355.267Z" fill="white"/>
+  <path d="M930.89 489V154H999.157L1141.69 376.867V154H1208.49V489H1140.22L997.69 266.133V489H930.89Z" fill="white"/>
+  <text x="186" y="120" fill="#7DD3FC" font-family="Arial, sans-serif" font-size="30" letter-spacing="8">WEB DEVELOPMENT STUDIO</text>
+  <text x="188" y="572" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="28">Custom websites • SEO optimized solutions • High-performance delivery</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="600" y1="78" x2="600" y2="552" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#081121"/>
+    </linearGradient>
+  </defs>
+</svg>

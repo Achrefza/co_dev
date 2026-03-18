@@ -13,7 +13,7 @@ export function LanguageSwitcher({ locale, onChange }: LanguageSwitcherProps) {
   const { isMobile, shouldReduceMotion } = useAdaptiveMotion();
 
   return (
-    <div className="glass-card relative flex items-center gap-1 rounded-full border border-white/12 bg-slate-950/45 p-1 shadow-[0_10px_24px_rgba(2,8,23,0.24)] md:p-1.5 md:shadow-[0_12px_32px_rgba(2,8,23,0.3)]">
+    <div role="group" aria-label="Language switcher" className="glass-card relative flex items-center gap-1 rounded-full border border-white/12 bg-slate-950/45 p-1 shadow-[0_10px_24px_rgba(2,8,23,0.24)] md:p-1.5 md:shadow-[0_12px_32px_rgba(2,8,23,0.3)]">
       <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.08),transparent_60%)] md:bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_60%)]" />
       {locales.map((item) => {
         const isActive = item === locale;
@@ -25,6 +25,7 @@ export function LanguageSwitcher({ locale, onChange }: LanguageSwitcherProps) {
             className={`relative overflow-hidden rounded-full px-3 py-2 font-body text-[10px] font-semibold tracking-[0.18em] transition-all duration-300 ease-in-out md:px-4 md:text-[11px] md:tracking-[0.24em] ${
               isActive ? 'text-slate-950' : 'text-slate-300 hover:text-white'
             }`}
+            aria-label={`Switch language to ${item.toUpperCase()}`}
             aria-pressed={isActive}
           >
             {isActive ? (

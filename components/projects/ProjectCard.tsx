@@ -46,7 +46,7 @@ export function ProjectCard({ project, visitLabel }: ProjectCardProps) {
         <motion.div className="absolute inset-0" style={{ y: useTransform(progress, [0, 1], [imageTravel, -imageTravel]), scale: useTransform(progress, [0, 0.5, 1], [1.08, 1, 1.08]) }}>
           <Image
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} project preview for ${project.description}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-cover transition duration-500 ease-out md:duration-700 md:group-hover:scale-105"
@@ -79,6 +79,7 @@ export function ProjectCard({ project, visitLabel }: ProjectCardProps) {
           </div>
         </div>
         <a
+          aria-label={`Visit ${project.title} project website`}
           href={project.url}
           target="_blank"
           rel="noreferrer"

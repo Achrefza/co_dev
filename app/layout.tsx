@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import '@/styles/animations.css';
+import { TrackingScripts } from '@/components/marketing/TrackingScripts';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { createOrganizationSchema, createWebsiteSchema, siteConfig } from '@/lib/site';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -18,20 +21,69 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'CO_DEV | Web Development Studio',
-  description: 'CO_DEV is a professional web development studio building modern, high-performance and scalable websites.',
-  keywords: ['CO_DEV', 'web development studio', 'web agency', 'next.js', 'scalable websites'],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`
+  },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: 'technology',
+  alternates: {
+    canonical: siteConfig.url
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1
+    }
+  },
   openGraph: {
-    title: 'CO_DEV | Web Development Studio',
-    description: 'Professional web development studio for modern, high-performance and scalable websites.',
-    type: 'website'
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: 'website',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} website preview`
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage]
   }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const structuredData = [createOrganizationSchema(), createWebsiteSchema()];
+
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
-      <body className="font-body">{children}</body>
+      <body className="font-body">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <JsonLd data={structuredData} />
+        <TrackingScripts />
+        {children}
+      </body>
     </html>
   );
 }
