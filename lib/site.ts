@@ -33,10 +33,11 @@ export const siteConfig = {
     email: 'contact.codev@proton.me'
   },
   navigation: [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Home', href: '#hero' },
+    { label: 'Services', href: '#services' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Tech', href: '#tech' },
+    { label: 'Contact', href: '#contact' }
   ]
 } as const;
 
