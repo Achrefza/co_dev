@@ -158,8 +158,8 @@ function SectionReveal({
       ref={ref}
       className={`section-container section-anchor relative ${className}`.trim()}
       initial={false}
-      animate={{ opacity: isInView ? 1 : 0.42, y: isInView ? 0 : 36 }}
-      transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+      animate={{ opacity: isInView ? 1 : 0.64, y: isInView ? 0 : 24 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.section>
@@ -254,12 +254,12 @@ export function HomePage() {
 
   return (
     <div className="relative overflow-hidden mobile-premium-shell">
-      <div className="pointer-events-none absolute inset-0 grid-surface opacity-[0.08] md:opacity-[0.16]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.08),transparent_58%)] md:h-[34rem] md:bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_58%)]" />
+      <div className="pointer-events-none absolute inset-0 grid-surface opacity-[0.05] md:opacity-[0.12]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[24rem] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.06),transparent_54%)] md:h-[32rem] md:bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_56%)]" />
 
       <header
         ref={headerRef}
-        className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/72 shadow-[0_12px_30px_rgba(2,8,23,0.24)] backdrop-blur-xl transition-all duration-300 md:bg-slate-950/50 md:backdrop-blur-2xl"
+        className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/82 shadow-[0_12px_24px_rgba(2,8,23,0.18)] backdrop-blur-md transition-all duration-200 md:bg-slate-950/56 md:backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3.5 md:px-10 md:py-4 lg:px-12">
           <button
@@ -320,29 +320,29 @@ export function HomePage() {
 
       <main id="main-content">
         <section id="hero" className="section-anchor relative overflow-hidden bg-hero min-h-[100svh] md:min-h-[96vh]" aria-labelledby="home-hero-title">
-          <div className="hero-orb left-[-7rem] top-[8%] h-52 w-52 bg-primary/18 md:left-[-6rem] md:h-72 md:w-72 md:bg-primary/26" />
+          <div className="hero-orb left-[-6rem] top-[10%] h-40 w-40 bg-primary/12 md:left-[-6rem] md:h-64 md:w-64 md:bg-primary/26" />
           {!isMobile ? <div className="hero-orb right-[-5rem] top-14 h-80 w-80 bg-secondary/20" /> : null}
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_30%,rgba(255,255,255,0.06),transparent_18%),linear-gradient(180deg,rgba(2,6,23,0)_0%,rgba(2,6,23,0.38)_100%)]" />
-          <div className="pointer-events-none absolute inset-x-0 top-[-8%] h-[72%] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.16),transparent_58%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_30%,rgba(255,255,255,0.04),transparent_16%),linear-gradient(180deg,rgba(2,6,23,0)_0%,rgba(2,6,23,0.32)_100%)]" />
+          <div className="pointer-events-none absolute inset-x-0 top-[-8%] h-[68%] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_54%)]" />
 
-          <div className="section-container relative flex min-h-[100svh] items-center py-14 md:min-h-[96vh] md:py-28 lg:py-32">
-            <div className="grid w-full items-center gap-10 md:gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
+          <div className="section-container relative flex min-h-[100svh] items-center py-10 md:min-h-[96vh] md:py-28 lg:py-32">
+            <div className="grid w-full items-center gap-8 md:gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
               <motion.div
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: shouldReduceMotion ? 0.01 : 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-10"
               >
-                <span className="eyebrow inline-flex rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-[11px] text-accent shadow-[0_0_16px_rgba(56,189,248,0.06)] md:px-4 md:py-2 md:text-xs">
+                <span className="eyebrow inline-flex rounded-full border border-primary/20 bg-primary/8 px-3 py-1.5 text-[11px] text-accent shadow-[0_0_10px_rgba(56,189,248,0.05)] md:px-4 md:py-2 md:text-xs">
                   {t.studio}
                 </span>
-                <h1 id="home-hero-title" className="hero-title mt-6 max-w-5xl font-heading text-[2.8rem] font-semibold leading-[0.9] tracking-[-0.06em] text-white md:mt-8 md:text-[5rem] xl:text-[6rem]">
+                <h1 id="home-hero-title" className="hero-title mt-5 max-w-5xl text-balance font-heading text-[2.45rem] font-semibold leading-[0.94] tracking-[-0.055em] text-white md:mt-8 md:text-[5rem] xl:text-[6rem]">
                   <span className="block text-white">{t.heroTitleLead}</span>
                   <span className="gradient-text gradient-flow block pb-2 md:pb-3">{t.heroTitleAccent}</span>
                 </h1>
-                <p className="body-copy mt-6 max-w-2xl text-base leading-7 text-slate-200/84 md:mt-9 md:text-xl md:leading-9">{t.tagline}</p>
+                <p className="body-copy mt-5 max-w-xl text-[0.98rem] leading-7 text-slate-200/80 md:mt-9 md:max-w-2xl md:text-xl md:leading-9">{t.tagline}</p>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-11 md:gap-4">
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-11 md:gap-4">
                   <button type="button" onClick={() => scrollToSection('projects')} className="premium-button-primary w-full sm:w-auto">
                     {t.viewProjects}
                   </button>
@@ -351,7 +351,7 @@ export function HomePage() {
                   </button>
                 </div>
 
-                <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-2 md:mt-14 md:gap-4">
+                <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-2 md:mt-14 md:gap-4">
                   {[t.heroMetricOne, t.heroMetricTwo].map((item) => (
                     <div
                       key={item}
@@ -370,9 +370,9 @@ export function HomePage() {
                 transition={{ delay: shouldReduceMotion ? 0 : 0.12, duration: shouldReduceMotion ? 0.01 : 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="relative mx-auto w-full max-w-xl"
               >
-                <div className="absolute inset-[-6%] rounded-[40px] bg-[radial-gradient(circle,rgba(56,189,248,0.1),transparent_60%)] blur-2xl md:inset-[-10%] md:bg-[radial-gradient(circle,rgba(56,189,248,0.16),transparent_60%)] md:blur-3xl" />
-                <div className="glass-card relative overflow-hidden rounded-[28px] border-white/15 p-5 shadow-[0_18px_56px_rgba(2,8,23,0.34)] md:rounded-[34px] md:p-8 md:shadow-[0_30px_110px_rgba(2,8,23,0.46),0_0_45px_rgba(56,189,248,0.08)]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.12),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),transparent)] md:bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.1),transparent)]" />
+                <div className="absolute inset-[-4%] rounded-[36px] bg-[radial-gradient(circle,rgba(56,189,248,0.07),transparent_56%)] blur-xl md:inset-[-8%] md:bg-[radial-gradient(circle,rgba(56,189,248,0.12),transparent_58%)] md:blur-2xl" />
+                <div className="glass-card relative overflow-hidden rounded-[24px] border-white/12 p-4 shadow-[0_14px_36px_rgba(2,8,23,0.28)] md:rounded-[34px] md:p-8 md:shadow-[0_26px_82px_rgba(2,8,23,0.42),0_0_28px_rgba(56,189,248,0.06)]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.08),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.06),transparent)] md:bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.12),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.08),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.08),transparent)]" />
                   <div className="relative">
                     <div className="flex items-center justify-between border-b border-white/10 pb-4 md:pb-5">
                       <div>
@@ -433,9 +433,9 @@ export function HomePage() {
                   <motion.article
                     key={card.title}
                     whileHover={cardHover}
-                    className="group glass-card relative flex h-full flex-col rounded-[26px] border border-sky-200/10 bg-white/[0.06] p-5 transition-transform duration-300 ease-in-out md:rounded-[30px] md:p-7 hover:border-sky-200/30 hover:shadow-[0_24px_60px_rgba(14,165,233,0.16),0_0_28px_rgba(56,189,248,0.18)]"
+                    className="group glass-card relative flex h-full flex-col rounded-[24px] border border-sky-200/10 bg-white/[0.05] p-5 transition-transform duration-200 ease-out md:rounded-[30px] md:p-7 hover:border-sky-200/22 hover:shadow-[0_18px_42px_rgba(14,165,233,0.12),0_0_18px_rgba(56,189,248,0.12)]"
                   >
-                    <div className="absolute inset-0 rounded-[26px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.16),transparent_52%)] opacity-0 transition duration-300 ease-in-out md:rounded-[30px] group-hover:opacity-100" />
+                    <div className="absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_52%)] opacity-0 transition duration-200 ease-out md:rounded-[30px] group-hover:opacity-100" />
                     <div className="relative flex h-14 w-14 items-center justify-center rounded-[20px] border border-sky-200/20 bg-sky-400/12 text-sky-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition duration-300 ease-in-out md:h-16 md:w-16 md:rounded-[22px]">
                       {card.icon}
                     </div>
@@ -460,7 +460,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:mt-10">
               <button type="button" onClick={() => scrollToSection('projects')} className="premium-button-secondary">Explore projects</button>
               <button type="button" onClick={() => scrollToSection('contact')} className="premium-button-primary">Discuss your website</button>
             </div>
@@ -470,9 +470,9 @@ export function HomePage() {
                 <motion.article
                   key={card.title}
                   whileHover={cardHover}
-                  className="group glass-card relative flex h-full flex-col rounded-[26px] border border-sky-200/10 bg-white/[0.06] p-5 transition-transform duration-300 ease-in-out md:rounded-[30px] md:p-7 hover:border-sky-200/35 hover:shadow-[0_24px_60px_rgba(14,165,233,0.16),0_0_28px_rgba(56,189,248,0.2)]"
+                  className="group glass-card relative flex h-full flex-col rounded-[24px] border border-sky-200/10 bg-white/[0.05] p-5 transition-transform duration-200 ease-out md:rounded-[30px] md:p-7 hover:border-sky-200/24 hover:shadow-[0_18px_42px_rgba(14,165,233,0.12),0_0_18px_rgba(56,189,248,0.12)]"
                 >
-                  <div className="absolute inset-0 rounded-[26px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.16),transparent_52%)] opacity-0 transition duration-300 ease-in-out md:rounded-[30px] group-hover:opacity-100" />
+                  <div className="absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_52%)] opacity-0 transition duration-200 ease-out md:rounded-[30px] group-hover:opacity-100" />
                   <div className="relative flex h-14 w-14 items-center justify-center rounded-[20px] border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition duration-300 ease-in-out md:h-16 md:w-16 md:rounded-[22px]">
                     {card.icon}
                   </div>
@@ -539,19 +539,19 @@ export function HomePage() {
         </SectionReveal>
 
         <SectionReveal id="contact" className="pt-8 pb-20 md:pt-10 md:pb-28">
-          <div className="relative overflow-hidden rounded-[28px] border border-primary/20 bg-[linear-gradient(135deg,rgba(2,6,23,0.96),rgba(10,20,36,0.94)_45%,rgba(8,47,73,0.92)_100%)] p-6 shadow-[0_18px_56px_rgba(2,8,23,0.36)] md:rounded-[36px] md:p-12 md:shadow-[0_30px_100px_rgba(2,8,23,0.46)] lg:p-14">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.08),transparent_40%)] md:bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_42%)]" />
-            <div className="relative flex flex-col gap-8 md:gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="relative overflow-hidden rounded-[26px] border border-primary/18 bg-[linear-gradient(135deg,rgba(2,6,23,0.96),rgba(10,20,36,0.94)_52%,rgba(8,47,73,0.88)_100%)] p-5 shadow-[0_14px_38px_rgba(2,8,23,0.28)] md:rounded-[36px] md:p-12 md:shadow-[0_28px_84px_rgba(2,8,23,0.42)] lg:p-14">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.06),transparent_38%)] md:bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_42%)]" />
+            <div className="relative flex flex-col gap-7 md:gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl">
                 <p className="eyebrow">Let’s work together</p>
-                <h2 className="mt-4 font-heading text-[2.2rem] font-semibold tracking-[-0.055em] text-white md:mt-5 md:text-5xl lg:text-[3.5rem]">
+                <h2 className="mt-4 max-w-2xl text-balance font-heading text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-white md:mt-5 md:text-5xl lg:text-[3.5rem]">
                   {t.contactTitle}
                 </h2>
                 <p className="body-copy mt-5 text-base leading-7 text-slate-200/80 md:mt-6 md:text-lg md:leading-9">{t.contactText}</p>
                 <p className="mt-4 text-sm leading-7 text-slate-300/78 md:text-base">
                   Need a business website, custom website, or SEO optimized website? Use the single-page navigation above to jump between our services, projects, and technology stack without leaving the page.
                 </p>
-                <div className="mt-8 space-y-3 font-body text-slate-200/92 md:mt-9">
+                <div className="mt-7 space-y-3 font-body text-sm leading-7 text-slate-200/92 md:mt-9 md:text-base">
                   <p>
                     Email:{' '}
                     <a href={`mailto:${siteConfig.contact.email}`} className="text-sky-100 transition duration-300 ease-in-out hover:text-accent">
@@ -571,7 +571,7 @@ export function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row md:gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col xl:flex-row md:gap-4">
                 <a href={`mailto:${siteConfig.contact.email}`} className="premium-button-primary w-full sm:w-auto" aria-label="Email CO_DEV to start a project">
                   {t.hireMe}
                 </a>
