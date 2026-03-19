@@ -9,7 +9,7 @@ export type Project = {
 export const projects: Project[] = [
 {
   title: 'MADMOB Platform',
-  description: 'Creative digital platform for a music and culture brand, featuring immersive design, smooth navigation, and strong visual identity.',
+  description: 'Creative digital platform for a music and culture brand, featuring immersive design, smooth UX, and strong visual identity.',
   tech: ['Next.js', 'TailwindCSS', 'Framer Motion'],
   image: '/madmob.webp',
   url: 'https://madmob-dev.vercel.app/'
