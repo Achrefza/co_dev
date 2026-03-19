@@ -2,7 +2,7 @@ import { siteConfig } from '@/lib/site';
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/78 shadow-[0_10px_24px_rgba(2,8,23,0.24)] backdrop-blur-xl md:bg-slate-950/55">
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/88 shadow-[0_10px_22px_rgba(2,8,23,0.18)] backdrop-blur-md md:bg-slate-950/60 md:backdrop-blur-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 md:px-10 md:py-4 lg:px-12">
         <a href="/#hero" className="font-heading text-base font-semibold tracking-[0.24em] text-white transition duration-300 ease-in-out hover:text-primary md:text-lg md:tracking-[0.32em]">
           {siteConfig.name}

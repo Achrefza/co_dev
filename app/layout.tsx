@@ -77,9 +77,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
       <body className="font-body">
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
         <JsonLd data={structuredData} />
         <TrackingScripts />
         {children}
