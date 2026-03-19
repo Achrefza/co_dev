@@ -8,6 +8,7 @@ import {
   type MotionValue
 } from 'framer-motion';
 import { useMemo, useRef, useState, type ReactNode } from 'react';
+import Link from 'next/link';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { TechIcon } from '@/components/ui/TechIcon';
@@ -234,23 +235,26 @@ export function HomePage() {
           <a href="#hero" className="font-heading text-base font-semibold tracking-[0.24em] text-white transition duration-300 ease-in-out hover:text-primary md:text-lg md:tracking-[0.32em]">
             CO_DEV
           </a>
-          <nav className="hidden items-center gap-8 font-body text-sm text-slate-300/90 md:flex">
-            <a href="#projects" className="transition duration-300 ease-in-out hover:text-primary">
+          <nav aria-label="Primary" className="hidden items-center gap-8 font-body text-sm text-slate-300/90 md:flex">
+            <Link href="/projects" className="transition duration-300 ease-in-out hover:text-primary">
               {t.navProjects}
-            </a>
+            </Link>
             <a href="#about" className="transition duration-300 ease-in-out hover:text-primary">
               {t.navAbout}
             </a>
-            <a href="#contact" className="transition duration-300 ease-in-out hover:text-primary">
+            <Link href="/services" className="transition duration-300 ease-in-out hover:text-primary">
+              Services
+            </Link>
+            <Link href="/contact" className="transition duration-300 ease-in-out hover:text-primary">
               {t.navContact}
-            </a>
+            </Link>
           </nav>
           <LanguageSwitcher locale={locale} onChange={setLocale} />
         </div>
       </header>
 
-      <main>
-        <section id="hero" ref={heroRef} className="relative overflow-hidden bg-hero min-h-[100svh] md:min-h-[96vh]">
+      <main id="main-content">
+        <section id="hero" aria-labelledby="home-hero-title" ref={heroRef} className="relative overflow-hidden bg-hero min-h-[100svh] md:min-h-[96vh]">
           <motion.div className="hero-orb left-[-7rem] top-[6%] h-52 w-52 bg-primary/18 md:left-[-6rem] md:h-72 md:w-72 md:bg-primary/30" style={{ y: heroOrbLeftY }} />
           {!isMobile ? <motion.div className="hero-orb ambient-glow right-[-5rem] top-14 h-80 w-80 bg-secondary/25" style={{ y: heroOrbRightY }} /> : null}
           {!isMobile ? <motion.div className="hero-orb bottom-10 left-[34%] h-72 w-72 bg-accent/18" style={{ y: heroOrbLeftY }} /> : null}
@@ -271,7 +275,7 @@ export function HomePage() {
                 >
                   {t.studio}
                 </motion.span>
-                <h1 className="hero-title mt-6 max-w-5xl font-heading text-[2.8rem] font-semibold leading-[0.9] tracking-[-0.06em] text-white md:mt-8 md:text-[5rem] xl:text-[6rem]">
+                <h1 id="home-hero-title" className="hero-title mt-6 max-w-5xl font-heading text-[2.8rem] font-semibold leading-[0.9] tracking-[-0.06em] text-white md:mt-8 md:text-[5rem] xl:text-[6rem]">
                   <motion.span className="block text-white md:drop-shadow-[0_0_24px_rgba(125,211,252,0.14)]" style={{ y: heroLeadY }}>
                     {t.heroTitleLead}
                   </motion.span>
@@ -284,12 +288,12 @@ export function HomePage() {
                 </motion.p>
 
                 <motion.div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-11 md:gap-4" style={{ y: heroActionsY }}>
-                  <a href="#projects" className="premium-button-primary w-full sm:w-auto">
+                  <Link href="/projects" className="premium-button-primary w-full sm:w-auto">
                     {t.viewProjects}
-                  </a>
-                  <a href="#contact" className="premium-button-secondary w-full sm:w-auto">
+                  </Link>
+                  <Link href="/contact" className="premium-button-secondary w-full sm:w-auto">
                     {t.contact}
-                  </a>
+                  </Link>
                 </motion.div>
 
                 <motion.div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-2 md:mt-14 md:gap-4" style={{ y: heroMetricsY }}>
@@ -356,7 +360,7 @@ export function HomePage() {
           </motion.div>
         </section>
 
-        <CinematicSection className="pt-8 md:pt-18">
+        <CinematicSection id="services" className="pt-8 md:pt-18">
           {({ backgroundY, contentY, contentOpacity, contentScale, accentY, borderOpacity }) => (
             <motion.div className="premium-surface px-5 py-10 md:px-10 md:py-16" style={{ y: contentY, opacity: contentOpacity, scale: contentScale }}>
               <motion.div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-sky-200/60 to-transparent" style={{ opacity: borderOpacity }} />
@@ -407,8 +411,13 @@ export function HomePage() {
                     Professional Web Development Services
                   </h2>
                   <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-300/82 md:mt-6 md:text-lg md:leading-9">
-                    We develop a wide range of digital solutions tailored to your needs.
+                    We develop custom websites, SEO optimized websites, e-commerce development platforms, and business websites tailored to your growth goals.
                   </p>
+                </div>
+
+                <div className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10">
+                  <Link href="/projects" className="premium-button-secondary">Explore projects</Link>
+                  <Link href="/contact" className="premium-button-primary">Discuss your website</Link>
                 </div>
 
                 <motion.div className="mt-8 rounded-[26px] border border-sky-200/15 bg-sky-400/10 px-5 py-5 text-center shadow-[0_12px_36px_rgba(14,165,233,0.1)] md:mt-12 md:rounded-[30px] md:px-6 md:py-6 md:shadow-[0_18px_60px_rgba(14,165,233,0.12)]" style={{ y: backgroundY }}>
@@ -446,7 +455,10 @@ export function HomePage() {
                   <p className="eyebrow">Our Work</p>
                   <h2 className="section-heading">{t.projectsTitle}</h2>
                 </motion.div>
-                <p className="section-copy">{t.projectsSubtitle}</p>
+                <div className="space-y-4">
+                  <p className="section-copy">{t.projectsSubtitle}</p>
+                  <Link href="/services" className="inline-flex text-sm font-semibold text-sky-200 transition hover:text-white">See related services →</Link>
+                </div>
               </div>
               <div className="mt-10 grid gap-5 md:mt-12 md:gap-7 md:grid-cols-2 xl:grid-cols-3">
                 {projects.map((project) => (
@@ -521,6 +533,7 @@ export function HomePage() {
                     {t.contactTitle}
                   </h2>
                   <p className="body-copy mt-5 text-base leading-7 text-slate-200/80 md:mt-6 md:text-lg md:leading-9">{t.contactText}</p>
+                  <p className="mt-4 text-sm leading-7 text-slate-300/78 md:text-base">Need a business website, custom website, or SEO optimized website? Explore our <Link href="/services" className="text-sky-200 hover:text-white">services</Link> or review recent <Link href="/projects" className="text-sky-200 hover:text-white">projects</Link>.</p>
                   <div className="mt-8 space-y-3 font-body text-slate-200/92 md:mt-9">
                     <p>
                       Email:{' '}
@@ -542,12 +555,12 @@ export function HomePage() {
                   </div>
                 </div>
                 <motion.div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row md:gap-4" style={{ y: accentY }}>
-                  <a href="mailto:hello@co-dev.studio" className="premium-button-primary w-full sm:w-auto">
+                  <a href="mailto:contact.codev@proton.me" className="premium-button-primary w-full sm:w-auto" aria-label="Email CO_DEV to start a project">
                     {t.hireMe}
                   </a>
-                  <a href="#projects" className="premium-button-secondary w-full border-white/20 bg-white/[0.04] sm:w-auto">
+                  <Link href="/projects" className="premium-button-secondary w-full border-white/20 bg-white/[0.04] sm:w-auto">
                     {t.viewProjects}
-                  </a>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

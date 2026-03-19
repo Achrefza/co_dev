@@ -7,14 +7,13 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    title: 'FinTech Dashboard',
-    description: 'Secure analytics dashboard for a digital finance startup.',
-    tech: ['Next.js', 'TypeScript', 'Node.js'],
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    url: 'https://example.com'
-  },
+{
+  title: 'MADMOB Platform',
+  description: 'Creative digital platform for a music and culture brand, featuring immersive design, smooth UX, and strong visual identity.',
+  tech: ['Next.js', 'TailwindCSS', 'Framer Motion'],
+  image: '/madmob.webp',
+  url: 'https://madmob-dev.vercel.app/'
+},
   {
     title: 'Medical Booking Platform',
     description: 'Appointment platform with role-based access and API integrations.',
