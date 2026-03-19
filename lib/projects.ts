@@ -13,7 +13,7 @@ export const projects: Project[] = [
   tech: ['Next.js', 'TailwindCSS', 'Framer Motion'],
   image: '/madmob.webp',
   url: 'https://madmob-dev.vercel.app/'
-}
+},
   {
     title: 'Medical Booking Platform',
     description: 'Appointment platform with role-based access and API integrations.',
