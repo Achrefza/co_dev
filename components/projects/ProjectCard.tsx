@@ -1,8 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { useAdaptiveMotion } from '@/hooks/useAdaptiveMotion';
 import type { Project } from '@/lib/projects';
 
@@ -13,58 +12,46 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, visitLabel }: ProjectCardProps) {
   const { allowHover, isMobile, shouldReduceMotion } = useAdaptiveMotion();
-  const ref = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start']
-  });
-
-  const progress = useSpring(scrollYProgress, shouldReduceMotion || isMobile ? { damping: 80, stiffness: 320 } : { damping: 24, stiffness: 130, mass: 0.32 });
-  const travel = shouldReduceMotion ? 0 : isMobile ? 6 : 28;
-  const imageTravel = shouldReduceMotion ? 0 : isMobile ? 4 : 36;
+  const canAnimate = !shouldReduceMotion && !isMobile;
 
   return (
     <motion.article
-      ref={ref}
-      whileHover={allowHover && !shouldReduceMotion ? { y: -10, scale: 1.01 } : undefined}
-      style={{
-        opacity: useTransform(progress, [0, 0.18, 0.5, 0.85, 1], isMobile ? [0.82, 0.94, 1, 0.94, 0.84] : [0.38, 0.84, 1, 0.88, 0.5]),
-        y: useTransform(progress, [0, 0.5, 1], [travel, 0, -travel]),
-        scale: useTransform(progress, [0, 0.5, 1], [shouldReduceMotion || isMobile ? 1 : 0.985, 1, shouldReduceMotion || isMobile ? 1 : 0.992])
-      }}
+      initial={canAnimate ? { opacity: 0, y: 20 } : false}
+      whileInView={canAnimate ? { opacity: 1, y: 0 } : undefined}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: canAnimate ? 0.45 : 0, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={allowHover && canAnimate ? { y: -6 } : undefined}
       className="glass-card group relative flex h-full min-h-[29rem] flex-col overflow-hidden rounded-[24px] border border-white/12 md:min-h-[34rem] md:rounded-[32px]"
     >
-      <motion.div
-        className="pointer-events-none absolute inset-0 rounded-[24px] border border-sky-200/0 opacity-0 transition-all duration-300 ease-out md:rounded-[32px] group-hover:border-sky-200/24 group-hover:opacity-100 group-hover:shadow-[0_0_0_1px_rgba(125,211,252,0.14),0_0_24px_rgba(56,189,248,0.12)]"
-        style={{ opacity: useTransform(progress, [0, 0.5, 1], [0.15, 0.35, 0.18]) }}
-      />
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-sky-300/6 via-transparent to-slate-950/70 opacity-100 md:opacity-0 md:transition md:duration-300 md:ease-out md:group-hover:opacity-100"
-        style={{ opacity: useTransform(progress, [0, 0.5, 1], [0.55, 0.82, 0.62]) }}
-      />
+      <div className="pointer-events-none absolute inset-0 rounded-[24px] border border-sky-200/0 opacity-0 transition-[opacity,border-color,box-shadow] duration-200 ease-out md:rounded-[32px] group-hover:border-sky-200/20 group-hover:opacity-100 group-hover:shadow-[0_0_0_1px_rgba(125,211,252,0.1),0_0_18px_rgba(56,189,248,0.08)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-300/5 via-transparent to-slate-950/70 opacity-100 md:opacity-0 md:transition-opacity md:duration-200 md:ease-out md:group-hover:opacity-100" />
       <div className="relative h-56 w-full overflow-hidden md:h-72">
-        <motion.div className="absolute inset-0" style={{ y: useTransform(progress, [0, 1], [imageTravel, -imageTravel]), scale: useTransform(progress, [0, 0.5, 1], [1.08, 1, 1.08]) }}>
+        <motion.div
+          className="absolute inset-0"
+          whileHover={allowHover && canAnimate ? { scale: 1.03 } : undefined}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Image
             src={project.image}
             alt={`${project.title} project preview for ${project.description}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-cover transition duration-500 ease-out md:duration-700 md:group-hover:scale-105"
+            className="object-cover"
           />
         </motion.div>
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.72)_0%,rgba(2,6,23,0.18)_34%,rgba(2,6,23,0.86)_100%)]" />
-        <motion.div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/65 to-transparent md:h-28" style={{ opacity: useTransform(progress, [0, 0.5, 1], [0.9, 0.66, 0.84]) }} />
-        <motion.div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 md:bottom-5 md:left-5 md:right-5" style={{ y: useTransform(progress, [0, 1], ['10px', '-12px']) }}>
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-950/65 to-transparent md:h-28" />
+        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 md:bottom-5 md:left-5 md:right-5">
           <div>
             <p className="eyebrow mb-2 text-[11px] text-sky-100/90 md:mb-3 md:text-xs">Featured build</p>
             <h3 className="font-heading text-[1.55rem] font-semibold tracking-[-0.045em] text-white md:text-[1.85rem]">{project.title}</h3>
           </div>
-          <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 font-body text-[10px] uppercase tracking-[0.14em] text-slate-100 backdrop-blur-sm md:px-3.5 md:text-[11px] md:tracking-[0.2em] md:backdrop-blur-md">
+          <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 font-body text-[10px] uppercase tracking-[0.14em] text-slate-100 backdrop-blur-sm md:px-3.5 md:text-[11px] md:tracking-[0.2em]">
             Premium UI
           </span>
-        </motion.div>
+        </div>
       </div>
-      <motion.div className="relative flex flex-1 flex-col justify-between space-y-5 p-5 md:space-y-6 md:p-7" style={{ y: useTransform(progress, [0, 1], ['8px', '-10px']) }}>
+      <div className="relative flex flex-1 flex-col justify-between space-y-5 p-5 md:space-y-6 md:p-7">
         <div className="space-y-4 md:space-y-5">
           <p className="font-body text-[15px] leading-7 text-slate-300/82 md:leading-8">{project.description}</p>
           <div className="flex flex-wrap gap-2.5">
@@ -88,7 +75,7 @@ export function ProjectCard({ project, visitLabel }: ProjectCardProps) {
           {visitLabel}
           <span aria-hidden="true">↗</span>
         </a>
-      </motion.div>
+      </div>
     </motion.article>
   );
 }
