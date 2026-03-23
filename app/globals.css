@@ -344,3 +344,27 @@ a.premium-button-secondary {
     scroll-behavior: auto !important;
   }
 }
+
+
+.service-icon-shell {
+  color: #7dd3fc;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(125, 211, 252, 0.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 10px 28px rgba(14, 165, 233, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.group:hover .service-icon-shell {
+  transform: scale(1.05);
+  border-color: rgba(125, 211, 252, 0.28);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(125, 211, 252, 0.12));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 16px 34px rgba(14, 165, 233, 0.18),
+    0 0 24px rgba(125, 211, 252, 0.2);
+}
