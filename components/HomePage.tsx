@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
+import { AppWindow, Globe, ImageIcon, MousePointerClick, Puzzle, Search, ShieldCheck, ShoppingCart, SquareChartGantt, Zap } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
@@ -24,43 +25,23 @@ const performanceCards: Array<{ title: string; description: string; icon: ReactN
     title: 'SEO Optimization',
     description:
       'Optimized for search engines with clean structure, meta tags, and best practices to improve visibility on Google.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M11 4a7 7 0 105.27 11.61l3.06 3.06 1.41-1.41-3.06-3.06A7 7 0 0011 4z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8.5 11.5l1.7 1.7 3.3-4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    icon: <Search className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Performance',
     description: 'Fast-loading websites with optimized assets and high Lighthouse scores for better user experience.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M12 3l-4 10h4l-1 8 5-11h-4l0-7z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    icon: <Zap className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Indexation',
     description:
       'Proper indexing setup to ensure your website is visible and correctly listed in search engines.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M7 7h10M7 12h6M7 17h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M17.5 14.5l3 3m0-3l-3 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
-      </svg>
-    )
+    icon: <SquareChartGantt className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Security & Quality',
     description: 'Secure, scalable, and maintainable code built with modern development standards.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M12 3l7 3v5c0 4.6-2.8 8.9-7 10-4.2-1.1-7-5.4-7-10V6l7-3z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M9.5 12l1.7 1.7 3.8-4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    icon: <ShieldCheck className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   }
 ];
 
@@ -69,63 +50,35 @@ const webDevelopmentCards: Array<{ title: string; description: string; icon: Rea
     title: 'Business & Vitrine Websites',
     description:
       'Modern and professional websites designed to represent your brand and attract clients.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M4 7.5h16M9 17h6M6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    icon: <Globe className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'E-commerce Platforms',
     description:
       'Custom online stores with optimized performance, user experience, and scalability.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M4 6h2l2.2 9.2A2 2 0 0010.15 17H18a2 2 0 001.95-1.55L21 9H8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M10 20a1 1 0 100-2 1 1 0 000 2zM18 20a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    icon: <ShoppingCart className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Landing Pages',
     description:
       'High-converting landing pages designed for marketing campaigns and lead generation.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M5 6v12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    )
+    icon: <MousePointerClick className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Web Applications',
     description:
       'Custom-built web apps, dashboards, and tools tailored to your specific business needs.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M9 4v16M4 10h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    )
+    icon: <AppWindow className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Portfolio Websites',
     description: 'Clean and modern portfolios to showcase your work and personal brand.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M4 9.5A2.5 2.5 0 016.5 7H9l1.4-2h3.2L15 7h2.5A2.5 2.5 0 0120 9.5v7A2.5 2.5 0 0117.5 19h-11A2.5 2.5 0 014 16.5v-7z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-        <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.8" />
-      </svg>
-    )
+    icon: <ImageIcon className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   },
   {
     title: 'Custom Solutions',
     description: 'Fully tailored development for unique ideas and complex requirements.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-        <path d="M12 4l2.5 5.1 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 4z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    icon: <Puzzle className="h-6 w-6 md:h-7 md:w-7" strokeWidth={1.7} aria-hidden="true" />
   }
 ];
 
@@ -438,7 +391,7 @@ export function HomePage() {
                     className="group glass-card relative flex h-full flex-col rounded-[24px] border border-sky-200/10 bg-white/[0.05] p-5 transition-transform duration-200 ease-out md:rounded-[30px] md:p-7 hover:border-sky-200/22 hover:shadow-[0_18px_42px_rgba(14,165,233,0.12),0_0_18px_rgba(56,189,248,0.12)]"
                   >
                     <div className="absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_52%)] opacity-0 transition duration-200 ease-out md:rounded-[30px] group-hover:opacity-100" />
-                    <div className="relative flex h-14 w-14 items-center justify-center rounded-[20px] border border-sky-200/20 bg-sky-400/12 text-sky-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition duration-300 ease-in-out md:h-16 md:w-16 md:rounded-[22px]">
+                    <div className="service-icon-shell relative flex h-14 w-14 items-center justify-center rounded-xl md:h-16 md:w-16">
                       {card.icon}
                     </div>
                     <h3 className="relative mt-6 font-heading text-xl font-semibold tracking-[-0.035em] text-white md:mt-7">{card.title}</h3>
@@ -475,7 +428,7 @@ export function HomePage() {
                   className="group glass-card relative flex h-full flex-col rounded-[24px] border border-sky-200/10 bg-white/[0.05] p-5 transition-transform duration-200 ease-out md:rounded-[30px] md:p-7 hover:border-sky-200/24 hover:shadow-[0_18px_42px_rgba(14,165,233,0.12),0_0_18px_rgba(56,189,248,0.12)]"
                 >
                   <div className="absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.1),transparent_52%)] opacity-0 transition duration-200 ease-out md:rounded-[30px] group-hover:opacity-100" />
-                  <div className="relative flex h-14 w-14 items-center justify-center rounded-[20px] border border-sky-200/20 bg-sky-400/10 text-sky-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition duration-300 ease-in-out md:h-16 md:w-16 md:rounded-[22px]">
+                  <div className="service-icon-shell relative flex h-14 w-14 items-center justify-center rounded-xl md:h-16 md:w-16">
                     {card.icon}
                   </div>
                   <h3 className="relative mt-6 font-heading text-xl font-semibold tracking-[-0.035em] text-white md:mt-7">{card.title}</h3>
